@@ -60,12 +60,7 @@ export default function Header() {
         <div className="flex justify-between items-center max-w-[1400px] px-2 md:px-8 w-full">
           <Link href="/">
             <div className="flex gap-1 items-center ">
-              <div className="md:h-20 h-16 md:w-24 w-20 relative">
-                logo
-              </div>
-              <h1 className="text-customRed lg:text-[22px] text-[20px] font-bold hidden md:block">
-                MONEY<span className="text-customYellow">CHAIN</span>
-              </h1>
+              logo
             </div>
           </Link>
           <div className="lg:flex justify-end items-center gap-2 md:gap-4 hidden">

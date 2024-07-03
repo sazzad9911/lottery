@@ -6,7 +6,7 @@ interface LanguageState {
 }
 
 const initialState: LanguageState = {
-  language: localStorage.getItem("language") || "en", // default language is English
+  language:  "en", // default language is English
 };
 
 const languageSlice = createSlice({
