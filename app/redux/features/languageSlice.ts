@@ -1,3 +1,4 @@
+'use client'
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 interface LanguageState {
@@ -13,7 +14,7 @@ const languageSlice = createSlice({
   initialState,
   reducers: {
     toggleLanguage: (state) => {
-      state.language = state.language === "en" ? "en" : "bn";
+      state.language = state.language === "en" ? "bn" : "en";
       localStorage.setItem("language", state.language); // save to local storage
     },
     setLanguage: (state, action: PayloadAction<string>) => {
