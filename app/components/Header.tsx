@@ -1,5 +1,4 @@
 "use client";
-
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { useEffect, useState } from "react";
@@ -12,7 +11,6 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import { AiOutlineAlignRight, AiOutlineClose } from "react-icons/ai";
-import Image from "next/image";
 import LanguageToggle from "./LanguageToggle";
 
 export default function Header() {
@@ -53,15 +51,13 @@ export default function Header() {
   return (
     <div className={`${pathname.split("/")[1] === "dashboard" && "hidden"}`}>
       <div
-        className={`w-full flex justify-center items-center z-10 bg-[#ffffffcc] shadow-md h-[60px] md:h-[80px] overflow-hidden transition-transform duration-300 fixed ${
+        className={`w-full flex justify-center items-center z-10 bg-[#9847863b] shadow-md h-[60px] md:h-[80px] overflow-hidden transition-transform duration-300 fixed ${
           showHeader ? "transform translate-y-0" : "transform -translate-y-full"
         }`}
       >
-        <div className="flex justify-between items-center max-w-[1400px] px-2 md:px-8 w-full">
+        <div className="flex justify-between items-center container px-2 md:px-8 w-full">
           <Link href="/">
-            <div className="flex gap-1 items-center ">
-              logo
-            </div>
+            <div className="flex gap-1 items-center ">logo</div>
           </Link>
           <div className="lg:flex justify-end items-center gap-2 md:gap-4 hidden">
             <Link
@@ -75,26 +71,6 @@ export default function Header() {
               Home
             </Link>
             <Link
-              href="/src/pages/plans"
-              className={`text-[12px] font-normal md:font-medium md:text-[16px] ${
-                route == "/src/pages/plans"
-                  ? "text-customYellow"
-                  : "text-primaryBlack hover:text-customYellow transition-colors duration-300"
-              }`}
-            >
-              Plans
-            </Link>
-            {/* <Link
-              href="/src/pages/products"
-              className={`text-[12px] font-normal md:font-medium md:text-[16px] ${
-                route == "/src/pages/products"
-                  ? "text-customYellow"
-                  : "text-primaryBlack hover:text-customYellow transition-colors duration-300"
-              }`}
-            >
-              Products
-            </Link> */}
-            <Link
               href="/src/pages/about"
               className={`text-[12px] font-normal md:font-medium md:text-[16px] ${
                 route == "/src/pages/about"
@@ -102,7 +78,7 @@ export default function Header() {
                   : "text-primaryBlack hover:text-customYellow transition-colors duration-300"
               }`}
             >
-              About
+            LOTTERIES
             </Link>
 
             <Link
@@ -113,7 +89,7 @@ export default function Header() {
                   : "text-primaryBlack hover:text-customYellow transition-colors duration-300"
               }`}
             >
-              Support
+            RESULT
             </Link>
             <div className="hidden md:block">
               <LanguageToggle></LanguageToggle>
@@ -166,17 +142,6 @@ export default function Header() {
               >
                 Plans
               </Link>
-              {/* <Link
-                onClick={onCloseNav}
-                href="/src/pages/products"
-                className={`text-[14px] border-b border-b-customRed font-medium pb-1 ${
-                  route == "/src/pages/products"
-                    ? "text-customYellow"
-                    : "text-primaryBlack hover:text-customYellow transition-colors duration-300"
-                }`}
-              >
-                Products
-              </Link> */}
 
               <Link
                 onClick={onCloseNav}
