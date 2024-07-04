@@ -125,25 +125,26 @@ export default function Header() {
         </div>
       </div>
       {/* mobile nav side bar  */}
-      <Drawer onClose={onCloseNav} isOpen={isOpenNav}>
+      <Drawer onClose={onCloseNav} isOpen={isOpenNav} >
         <DrawerOverlay />
         <DrawerContent>
+          <div  className="bg-[#D94F72] h-full">
           <DrawerHeader
             className="flex items-center justify-between"
             borderBottomWidth="1px"
           >
-            <p>Money Chain</p>
+            <p className="text-[#FFFFFF]">BD Lottery</p>
             <AiOutlineClose
               onClick={onCloseNav}
-              className="h-6 w-6 text-customRed hover:scale-105 duration-300 cursor-pointer"
+              className="h-7 w-7 text-[#FFFFFF] hover:scale-105 duration-300 cursor-pointer"
             />
           </DrawerHeader>
           <DrawerBody>
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-4 mt-2">
               <Link
                 onClick={onCloseNav}
                 href="/"
-                className={`text-[14px] border-b border-b-customRed font-medium pb-1 ${
+                className={`text-[14px] font-medium pb-1 ${
                   route == "/"
                     ? "text-[#F9DC00]"
                     : "text-[#FFFFFF] hover:text-[#F9DC00] transition-colors duration-300"
@@ -154,7 +155,7 @@ export default function Header() {
               <Link
                 onClick={onCloseNav}
                 href=""
-                className={`text-[14px] border-b border-b-customRed font-medium pb-1 ${
+                className={`text-[14px] font-medium pb-1 ${
                   route == ""
                     ? "text-[#F9DC00]"
                     : "text-[#FFFFFF] hover:text-[#F9DC00] transition-colors duration-300"
@@ -166,7 +167,7 @@ export default function Header() {
               <Link
                 onClick={onCloseNav}
                 href=""
-                className={`text-[14px] border-b border-b-customRed font-medium pb-1 ${
+                className={`text-[14px] font-medium pb-1 ${
                   route == ""
                     ? "text-[#F9DC00]"
                     : "text-[#FFFFFF] hover:text-[#F9DC00] transition-colors duration-300"
@@ -178,7 +179,7 @@ export default function Header() {
               <Link
                 onClick={onCloseNav}
                 href=""
-                className={`text-[14px] border-b border-b-customRed font-medium pb-1 ${
+                className={`text-[14px] font-medium pb-1 ${
                   route == ""
                     ? "text-[#F9DC00]"
                     : "text-[#FFFFFF] hover:text-[#F9DC00] transition-colors duration-300"
@@ -189,7 +190,7 @@ export default function Header() {
               <Link
                 onClick={onCloseNav}
                 href=""
-                className={`text-[14px] border-b border-b-customRed font-medium pb-1 ${
+                className={`text-[14px] font-medium pb-1 ${
                   route == ""
                     ? "text-[#F9DC00]"
                     : "text-[#FFFFFF] hover:text-[#F9DC00] transition-colors duration-300"
@@ -199,6 +200,7 @@ export default function Header() {
               </Link>
             </div>
           </DrawerBody>
+          </div>
         </DrawerContent>
       </Drawer>
     </div>

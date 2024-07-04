@@ -44,7 +44,7 @@ export default function Banner() {
               onLoad={handleLoad}
             />
           ))}
-          <div className="absolute right-0 top-20 xl:top-28 max-w-[600px]">
+          <div className="absolute right-0 top-20 xl:top-28 max-w-[650px] xl:max-w-[800px]">
             <div className="flex flex-col items-center space-y-2 xl:space-y-4 text-white">
               <h1 className="font-semibold text-[20px] lg:text-[36px] font-serif">DEAR LOTTERY</h1>
               <div>
