@@ -31,27 +31,27 @@ export default function Banner() {
       }}
     >
       <div className="container mx-auto px-2 md:px-8">
-        <div className="aspect-[2/1] lg:aspect-auto lg:h-[550px]  xl:h-[750px] relative max-w-[3000px] mx-auto">
+        <div className="h-[800px] lg:h-[650px]  xl:h-[750px] relative max-w-[3000px] mx-auto flex lg:block justify-center">
           {images.map((imageUrl, index) => (
             <Image
               placeholder="blur"
               key={index}
               alt="background Image"
               src={imageUrl}
-              className={`absolute bottom-0 transition-opacity duration-1000 h-[650px] w-72 ${
+              className={`absolute  bottom-0 transition-opacity duration-1000 h-[300px] w-48 lg:h-[450px] xl:h-[650px] lg:w-56 xl:w-72 ${
                 currentImageIndex === index ? "opacity-100" : "opacity-0"
               } ${loaded ? "loaded" : ""}`}
               onLoad={handleLoad}
             />
           ))}
-          <div className="absolute right-0 bottom-28 max-w-[600px]">
-            <div className="flex flex-col items-center space-y-4 text-white">
-              <h1 className="font-semibold text-[36px]">DEAR LOTTERY</h1>
+          <div className="absolute right-0 top-20 xl:top-28 max-w-[600px]">
+            <div className="flex flex-col items-center space-y-2 xl:space-y-4 text-white">
+              <h1 className="font-semibold text-[20px] lg:text-[36px] font-serif">DEAR LOTTERY</h1>
               <div>
-              <p className="font-semibold text-[28px] text-center">৳6</p>
-              <p className="font-semibold text-[28px] text-center">Ticket</p>
+              <p className="font-semibold text-[18px] md:text-[28px] text-center">৳ 6</p>
+              <p className="font-semibold text-[18px] md:text-[28px] text-center font-sans">Ticket</p>
               </div>
-              <p  className="font-normal text-[16px]">
+              <p  className="font-normal text-[14px] md:text-[16px]">
                 {"Dear Lottery"} is a compelling drama that revolves around the
                 lives of individuals whose fates are intertwined by a massive
                 lottery win. The story delves into the complexities of luck,
@@ -61,15 +61,21 @@ export default function Banner() {
                 challenges, and the poignant realization that money cant buy
                 happiness.
               </p>
-              <p  className="font-normal text-[16px] text-[#F7FF01]">
+              <p  className="font-normal text-[14px] md:text-[16px] text-[#F7FF01]">
                 Earn 5% commission on every ticket you resell! Join our program
                 today and start making extra money by helping others find
                 tickets to their favourite events!!!
               </p>
-              <div className="flex gap-2">
-                <button>btn 1</button>
-                <button>btn 2</button>
+              <div className="flex gap-4 text-black">
+                <div className="flex justify-center items-center h-10 lg:h-14 w-40 bg-[#F9DC00] rounded-md cursor-pointer hover:shadow-md hover:scale-110 duration-300">
+                  Take a Ticket
+                </div>
+                <div className="flex justify-center items-center h-10 lg:h-14 w-40 bg-[#F9DC00] rounded-md cursor-pointer hover:shadow-md hover:scale-110 duration-300">
+                Join as Reseller
+                </div>
+             
               </div>
+
             </div>
           </div>
           <div className="flex justify-center w-full absolute bottom-4">
