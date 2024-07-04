@@ -51,7 +51,7 @@ export default function Header() {
   return (
     <div className={`${pathname.split("/")[1] === "dashboard" && "hidden"}`}>
       <div
-        className={`w-full flex justify-center items-center z-10 bg-[#9847863b] shadow-md h-[60px] md:h-[80px] overflow-hidden transition-transform duration-300 fixed ${
+        className={`w-full flex justify-center items-center z-10 bg-[#98478664] shadow-md h-[60px] md:h-[80px] overflow-hidden transition-transform duration-300 fixed ${
           showHeader ? "transform translate-y-0" : "transform -translate-y-full"
         }`}
       >
@@ -64,32 +64,52 @@ export default function Header() {
               href="/"
               className={`text-[12px] font-normal md:font-medium md:text-[16px] ${
                 route == "/"
-                  ? "text-customYellow"
-                  : "text-primaryBlack hover:text-customYellow transition-colors duration-300"
+                  ? "text-[#F9DC00]"
+                  : "text-[#FFFFFF] hover:text-[#F9DC00] transition-colors duration-300"
               }`}
             >
-              Home
+              HOME
             </Link>
             <Link
-              href="/src/pages/about"
+              href=""
               className={`text-[12px] font-normal md:font-medium md:text-[16px] ${
-                route == "/src/pages/about"
-                  ? "text-customYellow"
-                  : "text-primaryBlack hover:text-customYellow transition-colors duration-300"
+                route == ""
+                  ? "text-[#F9DC00]"
+                  : "text-[#FFFFFF] hover:text-[#F9DC00] transition-colors duration-300"
               }`}
             >
-            LOTTERIES
+              LOTTERIES
             </Link>
 
             <Link
-              href="/src/pages/support"
+              href=""
               className={`text-[12px] font-normal md:font-medium md:text-[16px] ${
-                route == "/src/pages/support"
-                  ? "text-customYellow"
-                  : "text-primaryBlack hover:text-customYellow transition-colors duration-300"
+                route == ""
+                  ? "text-[#F9DC00]"
+                  : "text-[#FFFFFF] hover:text-[#F9DC00] transition-colors duration-300"
               }`}
             >
-            RESULT
+              RESULT
+            </Link>
+            <Link
+              href=""
+              className={`text-[12px] font-normal md:font-medium md:text-[16px] ${
+                route == ""
+                  ? "text-[#F9DC00]"
+                  : "text-[#FFFFFF] hover:text-[#F9DC00] transition-colors duration-300"
+              }`}
+            >
+              WINNERS
+            </Link>
+            <Link
+              href=""
+              className={`text-[12px] font-normal md:font-medium md:text-[16px] ${
+                route == ""
+                  ? "text-[#F9DC00]"
+                  : "text-[#FFFFFF] hover:text-[#F9DC00] transition-colors duration-300"
+              }`}
+            >
+              CONACT US
             </Link>
             <div className="hidden md:block">
               <LanguageToggle></LanguageToggle>
@@ -125,46 +145,57 @@ export default function Header() {
                 href="/"
                 className={`text-[14px] border-b border-b-customRed font-medium pb-1 ${
                   route == "/"
-                    ? "text-customYellow"
-                    : "text-primaryBlack hover:text-customYellow transition-colors duration-300"
+                    ? "text-[#F9DC00]"
+                    : "text-[#FFFFFF] hover:text-[#F9DC00] transition-colors duration-300"
                 }`}
               >
                 Home
               </Link>
               <Link
                 onClick={onCloseNav}
-                href="/src/pages/plans"
+                href=""
                 className={`text-[14px] border-b border-b-customRed font-medium pb-1 ${
-                  route == "/src/pages/plans"
-                    ? "text-customYellow"
-                    : "text-primaryBlack hover:text-customYellow transition-colors duration-300"
+                  route == ""
+                    ? "text-[#F9DC00]"
+                    : "text-[#FFFFFF] hover:text-[#F9DC00] transition-colors duration-300"
                 }`}
               >
-                Plans
+                LOTTERIES
               </Link>
 
               <Link
                 onClick={onCloseNav}
-                href="/src/pages/about"
+                href=""
                 className={`text-[14px] border-b border-b-customRed font-medium pb-1 ${
-                  route == "/src/pages/about"
-                    ? "text-customYellow"
-                    : "text-primaryBlack hover:text-customYellow transition-colors duration-300"
+                  route == ""
+                    ? "text-[#F9DC00]"
+                    : "text-[#FFFFFF] hover:text-[#F9DC00] transition-colors duration-300"
                 }`}
               >
-                About
+                RESULT
               </Link>
 
               <Link
                 onClick={onCloseNav}
-                href="/src/pages/support"
+                href=""
                 className={`text-[14px] border-b border-b-customRed font-medium pb-1 ${
-                  route == "/src/pages/support"
-                    ? "text-customYellow"
-                    : "text-primaryBlack hover:text-customYellow transition-colors duration-300"
+                  route == ""
+                    ? "text-[#F9DC00]"
+                    : "text-[#FFFFFF] hover:text-[#F9DC00] transition-colors duration-300"
                 }`}
               >
-                Support
+                WINNERS
+              </Link>
+              <Link
+                onClick={onCloseNav}
+                href=""
+                className={`text-[14px] border-b border-b-customRed font-medium pb-1 ${
+                  route == ""
+                    ? "text-[#F9DC00]"
+                    : "text-[#FFFFFF] hover:text-[#F9DC00] transition-colors duration-300"
+                }`}
+              >
+                CONACT US
               </Link>
             </div>
           </DrawerBody>
