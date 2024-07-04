@@ -12,8 +12,11 @@ import {
 } from "@chakra-ui/react";
 import { AiOutlineAlignRight, AiOutlineClose } from "react-icons/ai";
 import LanguageToggle from "./LanguageToggle";
+import { useSelector } from "react-redux";
+import { RootState } from "../redux/store";
 
 export default function Header() {
+  const language = useSelector((state: RootState) => state.language.language);
   const [showHeader, setShowHeader] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const pathname = usePathname();
@@ -68,7 +71,7 @@ export default function Header() {
                   : "text-[#FFFFFF] hover:text-[#F9DC00] transition-colors duration-300"
               }`}
             >
-              HOME
+              {language === "en" ? "HOME" : "হোম"}
             </Link>
             <Link
               href=""
@@ -78,7 +81,7 @@ export default function Header() {
                   : "text-[#FFFFFF] hover:text-[#F9DC00] transition-colors duration-300"
               }`}
             >
-              LOTTERIES
+              {language === "en" ? "LOTTERIES" : "লোটারিজ"}
             </Link>
 
             <Link
@@ -89,7 +92,7 @@ export default function Header() {
                   : "text-[#FFFFFF] hover:text-[#F9DC00] transition-colors duration-300"
               }`}
             >
-              RESULT
+              {language === "en" ? "RESULT" : "রেজাল্ট"}
             </Link>
             <Link
               href=""
@@ -99,7 +102,7 @@ export default function Header() {
                   : "text-[#FFFFFF] hover:text-[#F9DC00] transition-colors duration-300"
               }`}
             >
-              WINNERS
+              {language === "en" ? "WINNERS" : "বিজয়ী"}
             </Link>
             <Link
               href=""
@@ -109,7 +112,7 @@ export default function Header() {
                   : "text-[#FFFFFF] hover:text-[#F9DC00] transition-colors duration-300"
               }`}
             >
-              CONACT US
+              {language === "en" ? "  CONACT US" : "যোগাযোগ করুন"}
             </Link>
             <div className="hidden md:block">
               <LanguageToggle></LanguageToggle>
@@ -125,81 +128,81 @@ export default function Header() {
         </div>
       </div>
       {/* mobile nav side bar  */}
-      <Drawer onClose={onCloseNav} isOpen={isOpenNav} >
+      <Drawer onClose={onCloseNav} isOpen={isOpenNav}>
         <DrawerOverlay />
         <DrawerContent>
-          <div  className="bg-[#D94F72] h-full">
-          <DrawerHeader
-            className="flex items-center justify-between"
-            borderBottomWidth="1px"
-          >
-            <p className="text-[#FFFFFF]">BD Lottery</p>
-            <AiOutlineClose
-              onClick={onCloseNav}
-              className="h-7 w-7 text-[#FFFFFF] hover:scale-105 duration-300 cursor-pointer"
-            />
-          </DrawerHeader>
-          <DrawerBody>
-            <div className="flex flex-col gap-4 mt-2">
-              <Link
+          <div className="bg-[#D94F72] h-full">
+            <DrawerHeader
+              className="flex items-center justify-between"
+              borderBottomWidth="1px"
+            >
+              <p className="text-[#FFFFFF]">BD Lottery</p>
+              <AiOutlineClose
                 onClick={onCloseNav}
-                href="/"
-                className={`text-[14px] font-medium pb-1 ${
-                  route == "/"
-                    ? "text-[#F9DC00]"
-                    : "text-[#FFFFFF] hover:text-[#F9DC00] transition-colors duration-300"
-                }`}
-              >
-                Home
-              </Link>
-              <Link
-                onClick={onCloseNav}
-                href=""
-                className={`text-[14px] font-medium pb-1 ${
-                  route == ""
-                    ? "text-[#F9DC00]"
-                    : "text-[#FFFFFF] hover:text-[#F9DC00] transition-colors duration-300"
-                }`}
-              >
-                LOTTERIES
-              </Link>
+                className="h-7 w-7 text-[#FFFFFF] hover:scale-105 duration-300 cursor-pointer"
+              />
+            </DrawerHeader>
+            <DrawerBody>
+              <div className="flex flex-col gap-4 mt-2">
+                <Link
+                  onClick={onCloseNav}
+                  href="/"
+                  className={`text-[14px] font-medium pb-1 ${
+                    route == "/"
+                      ? "text-[#F9DC00]"
+                      : "text-[#FFFFFF] hover:text-[#F9DC00] transition-colors duration-300"
+                  }`}
+                >
+                  {language === "en" ? "HOME" : "হোম"}
+                </Link>
+                <Link
+                  onClick={onCloseNav}
+                  href=""
+                  className={`text-[14px] font-medium pb-1 ${
+                    route == ""
+                      ? "text-[#F9DC00]"
+                      : "text-[#FFFFFF] hover:text-[#F9DC00] transition-colors duration-300"
+                  }`}
+                >
+                  {language === "en" ? "LOTTERIES" : "লোটারিজ"}
+                </Link>
 
-              <Link
-                onClick={onCloseNav}
-                href=""
-                className={`text-[14px] font-medium pb-1 ${
-                  route == ""
-                    ? "text-[#F9DC00]"
-                    : "text-[#FFFFFF] hover:text-[#F9DC00] transition-colors duration-300"
-                }`}
-              >
-                RESULT
-              </Link>
+                <Link
+                  onClick={onCloseNav}
+                  href=""
+                  className={`text-[14px] font-medium pb-1 ${
+                    route == ""
+                      ? "text-[#F9DC00]"
+                      : "text-[#FFFFFF] hover:text-[#F9DC00] transition-colors duration-300"
+                  }`}
+                >
+                  {language === "en" ? "RESULT" : "রেজাল্ট"}
+                </Link>
 
-              <Link
-                onClick={onCloseNav}
-                href=""
-                className={`text-[14px] font-medium pb-1 ${
-                  route == ""
-                    ? "text-[#F9DC00]"
-                    : "text-[#FFFFFF] hover:text-[#F9DC00] transition-colors duration-300"
-                }`}
-              >
-                WINNERS
-              </Link>
-              <Link
-                onClick={onCloseNav}
-                href=""
-                className={`text-[14px] font-medium pb-1 ${
-                  route == ""
-                    ? "text-[#F9DC00]"
-                    : "text-[#FFFFFF] hover:text-[#F9DC00] transition-colors duration-300"
-                }`}
-              >
-                CONACT US
-              </Link>
-            </div>
-          </DrawerBody>
+                <Link
+                  onClick={onCloseNav}
+                  href=""
+                  className={`text-[14px] font-medium pb-1 ${
+                    route == ""
+                      ? "text-[#F9DC00]"
+                      : "text-[#FFFFFF] hover:text-[#F9DC00] transition-colors duration-300"
+                  }`}
+                >
+                  {language === "en" ? "WINNERS" : "বিজয়ী"}
+                </Link>
+                <Link
+                  onClick={onCloseNav}
+                  href=""
+                  className={`text-[14px] font-medium pb-1 ${
+                    route == ""
+                      ? "text-[#F9DC00]"
+                      : "text-[#FFFFFF] hover:text-[#F9DC00] transition-colors duration-300"
+                  }`}
+                >
+                  {language === "en" ? "  CONACT US" : "যোগাযোগ করুন"}
+                </Link>
+              </div>
+            </DrawerBody>
           </div>
         </DrawerContent>
       </Drawer>
