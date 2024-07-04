@@ -38,7 +38,7 @@ export default function Banner() {
               key={index}
               alt="background Image"
               src={imageUrl}
-              className={`absolute  bottom-0 transition-opacity duration-1000 h-[300px] w-48 lg:h-[450px] xl:h-[650px] lg:w-56 xl:w-72 ${
+              className={`absolute  bottom-0 transition-opacity duration-1000 h-[300px] w-48 lg:h-[450px] xl:h-[650px] lg:w-56 xl:w-80 ${
                 currentImageIndex === index ? "opacity-100" : "opacity-0"
               } ${loaded ? "loaded" : ""}`}
               onLoad={handleLoad}
