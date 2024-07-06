@@ -3,7 +3,7 @@ import Introduction from "./components/Introduction";
 
 export default function Home() {
   return (
-    <div>
+    <div className="bg-[#F5F5F5]">
       <Banner></Banner>
       <Introduction></Introduction>
     </div>
