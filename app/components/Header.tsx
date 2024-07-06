@@ -62,7 +62,7 @@ export default function Header() {
           <Link href="/">
             <div className="flex gap-1 items-center ">logo</div>
           </Link>
-          <div className="lg:flex justify-end items-center gap-2 md:gap-4 hidden">
+          <div className="lg:flex justify-end items-center gap-2 md:gap-4 lg:gap-10  hidden">
             <Link
               href="/"
               className={`text-[12px] font-normal md:font-medium md:text-[16px] ${
