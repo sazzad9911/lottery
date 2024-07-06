@@ -23,7 +23,7 @@ export default function MainLayout({
       <ChakraProvider>
         <Provider store={store}>
           <Header></Header>
-          {children}
+          <div className="bg-[#F5F5F5] pt-20 md:pt-24">{children}</div>
           <Footer></Footer>
         </Provider>
       </ChakraProvider>

@@ -54,7 +54,7 @@ export default function Header() {
   return (
     <div className={`${pathname.split("/")[1] === "dashboard" && "hidden"}`}>
       <div
-        className={`w-full flex justify-center items-center z-10 bg-[#98478664] shadow-md h-[60px] md:h-[80px] overflow-hidden transition-transform duration-300 fixed ${
+        className={`w-full flex justify-center items-center z-10 ${pathname === '/' ? 'bg-[#98478664]':'bg-[#D94F72]'}  shadow-md h-[60px] md:h-[80px] overflow-hidden transition-transform duration-300 fixed ${
           showHeader ? "transform translate-y-0" : "transform -translate-y-full"
         }`}
       >
@@ -74,14 +74,14 @@ export default function Header() {
               {language === "en" ? "HOME" : "হোম"}
             </Link>
             <Link
-              href=""
+              href="/pages/live-draw"
               className={`text-[12px] font-normal md:font-medium md:text-[16px] ${
-                route == ""
+                route == "/pages/live-draw"
                   ? "text-[#F9DC00]"
                   : "text-[#FFFFFF] hover:text-[#F9DC00] transition-colors duration-300"
               }`}
             >
-              {language === "en" ? "LOTTERIES" : "লোটারিজ"}
+              {language === "en" ? "LIVE DRAW" : "লাইভ ড্র"}
             </Link>
 
             <Link
@@ -157,14 +157,14 @@ export default function Header() {
                 </Link>
                 <Link
                   onClick={onCloseNav}
-                  href=""
+                  href="/pages/live-draw"
                   className={`text-[14px] font-medium pb-1 ${
-                    route == ""
+                    route == "/pages/live-draw"
                       ? "text-[#F9DC00]"
                       : "text-[#FFFFFF] hover:text-[#F9DC00] transition-colors duration-300"
                   }`}
                 >
-                  {language === "en" ? "LOTTERIES" : "লোটারিজ"}
+                  {language === "en" ? "LIVE DRAW" : "লাইভ ড্র"}
                 </Link>
 
                 <Link
