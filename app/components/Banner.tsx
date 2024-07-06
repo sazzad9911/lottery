@@ -74,7 +74,7 @@ export default function Banner() {
                 <div className="flex justify-center items-center h-10 lg:h-14 px-4 bg-[#F9DC00] rounded-md cursor-pointer hover:shadow-md hover:scale-110 duration-300">
                 {language === "en" ? "Take a Ticket" : "টিকিট নিন"} 
                 </div>
-                <div className="flex justify-center items-center h-10 lg:h-14 px-4 bg-[#F9DC00] rounded-md cursor-pointer hover:shadow-md hover:scale-110 duration-300">
+                <div className="flex justify-center items-center h-10 lg:h-14 w-40 bg-[#F9DC00] rounded-md cursor-pointer hover:shadow-md hover:scale-110 duration-300">
                 {language === "en" ? "Join as Reseller" : "বিক্রেতা হিসাবে যোগদান করুন"}  
                 </div>
               </div>
