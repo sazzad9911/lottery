@@ -50,7 +50,7 @@ export default function Banner() {
           <div className="absolute right-0 top-20 xl:top-28 max-w-[650px] xl:max-w-[800px]">
             <div className="flex flex-col items-center space-y-2 xl:space-y-4 text-white">
               <h1 className="font-semibold text-[20px] lg:text-[36px] font-serif">
-                {language === "en" ? "DEAR LOTTERY" : "প্রিয় লটারি"}
+                {language === "en" ? "DEAR LOTTERY" : "ডিয়ার লটারি"}
               </h1>
               <div>
                 <p className="font-semibold text-[18px] md:text-[28px] text-center">
@@ -75,7 +75,7 @@ export default function Banner() {
                 {language === "en" ? "Take a Ticket" : "টিকিট নিন"} 
                 </div>
                 <div className="flex justify-center items-center h-10 lg:h-14 w-40 bg-[#F9DC00] rounded-md cursor-pointer hover:shadow-md hover:scale-110 duration-300">
-                {language === "en" ? "Join as Reseller" : "বিক্রেতা হিসাবে যোগদান করুন"}  
+                {language === "en" ? "Join as Reseller" : "বিক্রেতা হন"}  
                 </div>
               </div>
             </div>
