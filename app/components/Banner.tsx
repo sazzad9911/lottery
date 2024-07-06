@@ -1,11 +1,14 @@
 "use client";
 import Image from "next/image";
+import { useSelector } from "react-redux";
+import { RootState } from "../redux/store";
 import React, { useEffect, useState } from "react";
 import people1 from "../../public/images/People1.png";
 import people2 from "../../public/images/People2.png";
 import bg from "../../public/images/bg.png";
 
 export default function Banner() {
+  const language = useSelector((state: RootState) => state.language.language);
   const images = [people1, people2, people1, people2, people1];
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -46,36 +49,35 @@ export default function Banner() {
           ))}
           <div className="absolute right-0 top-20 xl:top-28 max-w-[650px] xl:max-w-[800px]">
             <div className="flex flex-col items-center space-y-2 xl:space-y-4 text-white">
-              <h1 className="font-semibold text-[20px] lg:text-[36px] font-serif">DEAR LOTTERY</h1>
+              <h1 className="font-semibold text-[20px] lg:text-[36px] font-serif">
+                {language === "en" ? "DEAR LOTTERY" : "প্রিয় লটারি"}
+              </h1>
               <div>
-              <p className="font-semibold text-[18px] md:text-[28px] text-center">৳ 6</p>
-              <p className="font-semibold text-[18px] md:text-[28px] text-center font-sans">Ticket</p>
+                <p className="font-semibold text-[18px] md:text-[28px] text-center">
+                  {language === "en" ? "৳ 6" : "৳ ৬"}
+                </p>
+                <p className="font-semibold text-[18px] md:text-[28px] text-center font-sans">
+                  {language === "en" ? "Ticket" : "টিকিট"}
+                </p>
               </div>
-              <p  className="font-normal text-[14px] md:text-[16px]">
-                {"Dear Lottery"} is a compelling drama that revolves around the
-                lives of individuals whose fates are intertwined by a massive
-                lottery win. The story delves into the complexities of luck,
-                greed, and human nature, exploring how sudden wealth can both
-                transform and complicate relationships. As characters navigate
-                their newfound fortunes, they face moral dilemmas, unexpected
-                challenges, and the poignant realization that money cant buy
-                happiness.
+              <p className="font-normal text-[14px] md:text-[16px]">
+                {language === "en"
+                  ? "Dear Lottery is a compelling drama that revolves around the lives of individuals whose fates are intertwined by a massive lottery win. The story delves into the complexities of luck, greed, and human nature, exploring how sudden wealth can both transform and complicate relationships. As characters navigate their newfound fortunes, they face moral dilemmas, unexpected challenges, and the poignant realization that money cant buy happiness."
+                  : "প্রিয় লটারি হল একটি আকর্ষক নাটক যা সেই ব্যক্তিদের জীবনের চারপাশে আবর্তিত হয় যাদের ভাগ্য একটি বিশাল লটারি জয়ের সাথে জড়িত। গল্পটি ভাগ্য, লোভ এবং মানব প্রকৃতির জটিলতাগুলিকে আবিষ্কার করে, কীভাবে আকস্মিক সম্পদ সম্পর্ককে রূপান্তরিত এবং জটিল করে তুলতে পারে। অক্ষরগুলি যখন তাদের নতুন ভাগ্যের দিকে নেভিগেট করে, তারা নৈতিক দ্বিধা, অপ্রত্যাশিত চ্যালেঞ্জ এবং মর্মান্তিক উপলব্ধির মুখোমুখি হয় যে অর্থ সুখ কিনতে পারে না"}
               </p>
-              <p  className="font-normal text-[14px] md:text-[16px] text-[#F7FF01]">
-                Earn 5% commission on every ticket you resell! Join our program
-                today and start making extra money by helping others find
-                tickets to their favourite events!!!
+              <p className="font-normal text-[14px] md:text-[16px] text-[#F7FF01]">
+              {language === "en"
+                  ? "Earn 5% commission on every ticket you resell! Join our program today and start making extra money by helping others find tickets to their favourite events!!!"
+                  : "আপনি পুনরায় বিক্রি করা প্রতিটি টিকিটে 5% কমিশন উপার্জন করুন! আজই আমাদের প্রোগ্রামে যোগ দিন এবং অন্যদের তাদের প্রিয় ইভেন্টের টিকিট খুঁজে পেতে সাহায্য করে অতিরিক্ত অর্থ উপার্জন শুরু করুন!!!"}
               </p>
               <div className="flex gap-4 text-black">
                 <div className="flex justify-center items-center h-10 lg:h-14 w-40 bg-[#F9DC00] rounded-md cursor-pointer hover:shadow-md hover:scale-110 duration-300">
-                  Take a Ticket
+                {language === "en" ? "Take a Ticket" : "টিকিট নিন"} 
                 </div>
                 <div className="flex justify-center items-center h-10 lg:h-14 w-40 bg-[#F9DC00] rounded-md cursor-pointer hover:shadow-md hover:scale-110 duration-300">
-                Join as Reseller
+                {language === "en" ? "Join as Reseller" : "পুনরায় বিক্রেতা হিসাবে যোগদান করুন"}  
                 </div>
-             
               </div>
-
             </div>
           </div>
           <div className="flex justify-center w-full absolute bottom-4">
