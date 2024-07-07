@@ -202,7 +202,7 @@ export default function Header() {
                 </Link>
                 <Link
                   onClick={onCloseNav}
-                  href=""
+                  href="/pages/complain"
                   className={`text-[14px] font-medium pb-1 ${
                     route == ""
                       ? "text-[#F9DC00]"
