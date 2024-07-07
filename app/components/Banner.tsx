@@ -9,7 +9,7 @@ import bg from "../../public/images/bg.png";
 
 export default function Banner() {
   const language = useSelector((state: RootState) => state.language.language);
-  const images = [people1, people2, people1, people2, people1];
+  const images = [people2, people1, people2];
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [loaded, setLoaded] = useState(false);

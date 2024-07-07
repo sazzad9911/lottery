@@ -50,23 +50,23 @@ const Footer: React.FC = () => {
             <FooterSocialSVG></FooterSocialSVG>
             <div className=" flex justify-center gap-2 md:gap-4 xl:gap-10 my-4 md:my-10 flex-wrap">
               <Link href="#" className="text-[#CA5CB2] underline mx-2 text-[14px] md:text-[20px] ">
-                Lottery Rules & Act
+              {language === "en" ? "Lottery Rules & Act" : "লটারির নিয়ম ও আইন"}
               </Link>
               <Link href="#" className="text-[#CA5CB2] underline mx-2 text-[14px] md:text-[20px] ">
-                Privacy Policy
+              {language === "en" ? "Privacy Policy" : "গোপনীয়তা নীতি"}
               </Link>
               <Link href="#" className="text-[#CA5CB2] underline mx-2 text-[14px] md:text-[20px] ">
-                Return Policy
+              {language === "en" ? "Return Policy" : "প্রত্যাবর্তন নীতি"}
               </Link>
               <Link href="#" className="text-[#CA5CB2] underline mx-2 text-[14px] md:text-[20px] ">
-                Site Map
+              {language === "en" ? "Site Map" : "সাইট মানচিত্র"}
               </Link>
               <Link href="#" className="text-[#CA5CB2] underline mx-2 text-[14px] md:text-[20px] ">
-                Data Deletion Policy
+              {language === "en" ? "Data Deletion Policy" : "ডেটা মুছে ফেলার নীতি"}
               </Link>
             </div>
             <p className="text-gray-600 py-10 text-[14px] md:text-[20px] ">
-              &copy; {new Date().getFullYear()} - All Rights Reserved By DEAR LOTTERY
+              &copy; {new Date().getFullYear()} - {language === "en" ? "All Rights Reserved By DEAR LOTTERY" : "ডিয়ার লটারির সর্বস্বত্ব সংরক্ষিত"}
             </p>
           </div>
         </footer>

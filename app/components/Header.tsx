@@ -112,6 +112,16 @@ export default function Header() {
                   : "text-[#FFFFFF] hover:text-[#F9DC00] transition-colors duration-300"
               }`}
             >
+              {language === "en" ? "COMPLAIN BOX" : "অভিযোগ বাক্স"}
+            </Link>
+            <Link
+              href=""
+              className={`text-[12px] font-normal md:font-medium md:text-[16px] ${
+                route == ""
+                  ? "text-[#F9DC00]"
+                  : "text-[#FFFFFF] hover:text-[#F9DC00] transition-colors duration-300"
+              }`}
+            >
               {language === "en" ? "  CONACT US" : "যোগাযোগ করুন"}
             </Link>
             <div className="hidden md:block">
@@ -189,6 +199,17 @@ export default function Header() {
                   }`}
                 >
                   {language === "en" ? "WINNERS" : "বিজয়ী"}
+                </Link>
+                <Link
+                  onClick={onCloseNav}
+                  href=""
+                  className={`text-[14px] font-medium pb-1 ${
+                    route == ""
+                      ? "text-[#F9DC00]"
+                      : "text-[#FFFFFF] hover:text-[#F9DC00] transition-colors duration-300"
+                  }`}
+                >
+                  {language === "en" ? "COMPLAIN BOX" : "অভিযোগ বাক্স"}
                 </Link>
                 <Link
                   onClick={onCloseNav}
