@@ -1,18 +1,19 @@
+"use client";
 import React from "react";
+import { useSelector } from "react-redux";
+import { RootState } from "@/app/redux/store";
 
 function page() {
+  const language = useSelector((state: RootState) => state.language.language);
   return (
     <div className="p-4">
       <div className="grid grid-cols-1 container mx-auto text-center pt-8 pb-5">
         <h1 className="text-2xl lg:text-4xl pb-5 text-[#000000] font-bold">
-          Drop You Complain Here
+        {language === "en" ? "Drop You Complain Here" : "এখানে অভিযোগ ড্রপ করুন"} 
         </h1>
         <p className="justify-center text-justify  text-[16px] pb-8 text-[#000000]">
-          We value your feedback and are committed to providing the best service
-          possible. If you have experienced any issues or have concerns, please
-          let us know by dropping your complaint here. Our dedicated support
-          team will review your complaint promptly and work towards a swift
-          resolution.
+        {language === "en" ? "We value your feedback and are committed to providing the best service possible. If you have experienced any issues or have concerns, please let us know by dropping your complaint here. Our dedicated support team will review your complaint promptly and work towards a swift resolution." 
+         :"আমরা আপনার মতামতকে মূল্য দিই এবং সম্ভাব্য সর্বোত্তম পরিষেবা প্রদানের জন্য প্রতিশ্রুতিবদ্ধ। আপনি যদি কোনো সমস্যা অনুভব করেন বা উদ্বেগ থেকে থাকেন, তাহলে অনুগ্রহ করে এখানে আপনার অভিযোগ ড্রপ করে আমাদের জানান। আমাদের ডেডিকেটেড সাপোর্ট টিম আপনার অভিযোগটি দ্রুত পর্যালোচনা করবে এবং দ্রুত সমাধানের জন্য কাজ করবে।"} 
         </p>
       </div>
 
@@ -20,23 +21,25 @@ function page() {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           <div className="">
             <div className="pb-3">
-              <label className="text-xl lg:text-2xl pb-3 text-[#000000]">Name</label>
+              <label className="text-xl lg:text-2xl pb-3 text-[#000000]">
+                {language ==="en"?"Name":"নাম"}
+                </label>
             </div>
             <input
               type="text"
-              placeholder="Write your name..."
+              placeholder={language ==="en"?"Write your name":"তোমার নাম লিখ"} 
               className="w-full p-3 bg-[#D9D9D9] rounded-md"
             />
           </div>
           <div className="pb-4">
             <div className="pb-3">
               <label className="text-xl lg:text-2xl pb-3 text-[#000000]">
-                Contact Number
+              {language ==="en"?"Contact Number":"যোগাযোগের নম্বর"}
               </label>
             </div>
             <input
               type="text"
-              placeholder="Contact Number 11 digit"
+              placeholder={language ==="en"?"Contact Number 11 digit":"যোগাযোগ নম্বর ১১ সংখ্যা"} 
               className="w-full p-3 bg-[#D9D9D9] rounded-md"
             />
           </div>
@@ -45,23 +48,26 @@ function page() {
         <div>
           <div className="pb-3">
               <label className="text-xl lg:text-2xl pb-3 text-[#000000]">
-                Select a point
+              {language ==="en"?"Select a point":"নির্বাচন করুন"} 
               </label>
             </div>
           <select 
             className="w-full p-3 bg-[#D9D9D9] rounded-md mb-4">
-            <option selected>
-                Nothing Selected
+            <option disabled selected>
+            {language ==="en"?"Nothing Selected":"নির্বাচিত নয়"}   
             </option>
-            <option>Game</option>
+            <option>Result</option>
+            <option>Time</option>
             <option>Lottery</option>          
           </select>
         </div>
 
         <div className="grid grid-cols-1 pb-3">
-          <label className="text-xl lg:text-2xl pb-3 text-[#000000]">Message</label>
+          <label className="text-xl lg:text-2xl pb-3 text-[#000000]">
+          {language ==="en"?"Message":"বার্তা"} 
+            </label>
           <textarea
-            placeholder="Describe your problems"
+            placeholder={language ==="en"?"Describe your problems":"সমস্যাগুলি বর্ণনা করুন"}
             className="w-full p-5 bg-[#D9D9D9] rounded-md"
           ></textarea>
         </div>
@@ -69,7 +75,7 @@ function page() {
         <div className="text-center pt-4">
           <input
             type="submit"
-            value="Submit Complain"
+            value={language ==="en"?"Submit Complain":"অভিযোগ জমা দিন"}
             className="btn bg-[#D94F72] text-[#FFFFFF] px-5 py-2 rounded-md"
           />
         </div>
