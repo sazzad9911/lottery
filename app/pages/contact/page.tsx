@@ -8,7 +8,7 @@ export default function page() {
     <div className="container mx-auto p-4">
       <h1 className="text-center text-2xl lg:text-4xl mb-10 text-[#000000] font-bold">
         {language === "en" ? "Contact Us" : "যোগাযোগ করুন"}
-      </h1>
+      </h1> 
 
       <div className="block sm:flex justify-between mb-14">
       <div className="mb-3">
@@ -98,7 +98,7 @@ export default function page() {
         <p className="text-[#000000] text-xl lg:text-2xl mb-2">
         {language ==="en"?"Direct Call":"সরাসরি কল"}
           </p>
-        <div className="flex gap-2">
+        <div className="flex gap-1">
           <svg
             className="w-10 h-10"
             viewBox="0 0 60 60"
@@ -117,7 +117,7 @@ export default function page() {
               fill="#1C274C"
             />
           </svg>
-          <p>098463826232</p>
+          <a href="tel:+8809649110110"> 09649110110</a>
         </div>
       </div>
       </div>
