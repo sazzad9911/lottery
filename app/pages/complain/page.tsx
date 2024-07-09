@@ -17,7 +17,7 @@ function page() {
         </p>
       </div>
 
-      <div className="container mx-auto pb-20 gap-10">
+      <form className="container mx-auto pb-20 gap-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           <div className="">
             <div className="pb-3">
@@ -79,7 +79,7 @@ function page() {
             className="btn bg-[#D94F72] text-[#FFFFFF] px-5 py-2 rounded-md"
           />
         </div>
-      </div>
+      </form>
     </div>
   );
 }
