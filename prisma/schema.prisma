@@ -1,0 +1,86 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model Users {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  phone     String   @unique
+  password  String
+  name      String
+  pushToken String?
+  balance   Float    @default(0)
+  isAdmin   Boolean  @default(false)
+  date      DateTime @default(now())
+}
+
+model Events {
+  id             String       @id @default(auto()) @map("_id") @db.ObjectId
+  title          String
+  description    String
+  image          String
+  ticketOpenFrom DateTime     @default(now())
+  ticketCloseTo  DateTime     @default(now())
+  drawDate       DateTime     @default(now())
+  date           DateTime     @default(now())
+  ticketPrice    Int
+  live_link      String       @default("")
+  prize_list     prize_list[]
+  tickets        tickets[]
+  winners        winners[]
+  results        results[]
+}
+
+model prize_list {
+  id          String    @id @default(auto()) @map("_id") @db.ObjectId
+  position    Int
+  amount      Int
+  description String
+  eventId     String    @db.ObjectId
+  event       Events    @relation(references: [id], fields: [eventId], onDelete: Cascade)
+  results     results[]
+}
+
+model tickets {
+  id            String    @id @default(auto()) @map("_id") @db.ObjectId
+  price         Int
+  phone         String
+  ticket_number String    @unique
+  eventId       String    @db.ObjectId
+  event         Events    @relation(references: [id], fields: [eventId], onDelete: Cascade)
+  date          DateTime  @default(now())
+  results       results[]
+}
+
+model winners {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  image       String
+  prize_money Float
+  name        String
+  address     String
+  phone       String
+  postion     Int
+  eventId     String   @db.ObjectId
+  event       Events   @relation(references: [id], fields: [eventId], onDelete: Cascade)
+  date        DateTime @default(now())
+}
+
+model results {
+  id            String     @id @default(auto()) @map("_id") @db.ObjectId
+  ticket_number String
+  ticket        tickets    @relation(references: [ticket_number], fields: [ticket_number], onDelete: Cascade)
+  eventId       String     @db.ObjectId
+  event         Events     @relation(references: [id], fields: [eventId], onDelete: Cascade)
+  positionId    String     @db.ObjectId
+  prize         prize_list @relation(references: [id], fields: [positionId], onDelete: Cascade)
+}
