@@ -107,7 +107,7 @@ export default function Header() {
             <Link
               href="/pages/complain"
               className={`text-[12px] font-normal md:font-medium md:text-[16px] ${
-                route == ""
+                route == "/pages/complain"
                   ? "text-[#F9DC00]"
                   : "text-[#FFFFFF] hover:text-[#F9DC00] transition-colors duration-300"
               }`}
@@ -117,7 +117,7 @@ export default function Header() {
             <Link
               href="/pages/contact"
               className={`text-[12px] font-normal md:font-medium md:text-[16px] ${
-                route == ""
+                route == "/pages/contact"
                   ? "text-[#F9DC00]"
                   : "text-[#FFFFFF] hover:text-[#F9DC00] transition-colors duration-300"
               }`}
@@ -204,7 +204,7 @@ export default function Header() {
                   onClick={onCloseNav}
                   href="/pages/complain"
                   className={`text-[14px] font-medium pb-1 ${
-                    route == ""
+                    route == "/pages/complain"
                       ? "text-[#F9DC00]"
                       : "text-[#FFFFFF] hover:text-[#F9DC00] transition-colors duration-300"
                   }`}
@@ -215,7 +215,7 @@ export default function Header() {
                   onClick={onCloseNav}
                   href="/pages/contact"
                   className={`text-[14px] font-medium pb-1 ${
-                    route == ""
+                    route == "/pages/contact"
                       ? "text-[#F9DC00]"
                       : "text-[#FFFFFF] hover:text-[#F9DC00] transition-colors duration-300"
                   }`}

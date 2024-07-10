@@ -2,7 +2,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { RootState } from "@/app/redux/store";
-export default function page() {
+export default function Contact() {
   const language = useSelector((state: RootState) => state.language.language);
   return (
     <div className="container mx-auto p-4">
