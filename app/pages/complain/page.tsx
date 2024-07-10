@@ -3,7 +3,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { RootState } from "@/app/redux/store";
 
-function page() {
+function ComplainBox() {
   const language = useSelector((state: RootState) => state.language.language);
   return (
     <div className="p-4">
@@ -99,4 +99,4 @@ function page() {
   );
 }
 
-export default page;
+export default ComplainBox;
