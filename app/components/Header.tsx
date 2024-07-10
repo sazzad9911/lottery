@@ -115,7 +115,7 @@ export default function Header() {
               {language === "en" ? "COMPLAIN BOX" : "অভিযোগ বাক্স"}
             </Link>
             <Link
-              href=""
+              href="/pages/contact"
               className={`text-[12px] font-normal md:font-medium md:text-[16px] ${
                 route == ""
                   ? "text-[#F9DC00]"
@@ -213,7 +213,7 @@ export default function Header() {
                 </Link>
                 <Link
                   onClick={onCloseNav}
-                  href=""
+                  href="/pages/contact"
                   className={`text-[14px] font-medium pb-1 ${
                     route == ""
                       ? "text-[#F9DC00]"
