@@ -95,9 +95,9 @@ export default function Header() {
               {language === "en" ? "RESULT" : "রেজাল্ট"}
             </Link>
             <Link
-              href=""
+              href="/pages/winners"
               className={`text-[12px] font-normal md:font-medium md:text-[16px] ${
-                route == ""
+                route == "/pages/winners"
                   ? "text-[#F9DC00]"
                   : "text-[#FFFFFF] hover:text-[#F9DC00] transition-colors duration-300"
               }`}
@@ -191,9 +191,9 @@ export default function Header() {
 
                 <Link
                   onClick={onCloseNav}
-                  href=""
+                  href="/pages/winners"
                   className={`text-[14px] font-medium pb-1 ${
-                    route == ""
+                    route == "/pages/winners"
                       ? "text-[#F9DC00]"
                       : "text-[#FFFFFF] hover:text-[#F9DC00] transition-colors duration-300"
                   }`}

@@ -5,7 +5,7 @@ import { RootState } from "@/app/redux/store";
 export default function Contact() {
   const language = useSelector((state: RootState) => state.language.language);
   return (
-    <div className="container mx-auto p-4">
+    <div className="container mx-auto px-2 md:px-8">
       <h1 className="text-center text-2xl lg:text-4xl mb-10 text-[#000000] font-bold">
         {language === "en" ? "Contact Us" : "যোগাযোগ করুন"}
       </h1> 

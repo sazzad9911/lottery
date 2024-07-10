@@ -6,8 +6,8 @@ import { RootState } from "@/app/redux/store";
 function ComplainBox() {
   const language = useSelector((state: RootState) => state.language.language);
   return (
-    <div className="p-4">
-      <div className="grid grid-cols-1 container mx-auto text-center pt-8 pb-5">
+    <div className="container mx-auto px-2 md:px-8">
+      <div className="grid grid-cols-1 text-center pt-8 pb-5">
         <h1 className="text-2xl lg:text-4xl pb-5 text-[#000000] font-bold">
           {language === "en"
             ? "Drop You Complain Here"
@@ -20,7 +20,7 @@ function ComplainBox() {
         </p>
       </div>
 
-      <form className="container mx-auto pb-20 gap-10">
+      <form className="pb-20 gap-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           <div className="">
             <div className="pb-3">
