@@ -7,6 +7,7 @@ import people1 from "../../public/images/People1.png";
 import people2 from "../../public/images/People2.png";
 import people3 from "../../public/images/People3.png";
 import bg from "../../public/images/bg.png";
+import Link from "next/link";
 
 export default function Banner() {
   const language = useSelector((state: RootState) => state.language.language);
@@ -66,9 +67,11 @@ export default function Banner() {
                   : "আপনি পুনরায় বিক্রি করা প্রতিটি টিকিটে 5% কমিশন উপার্জন করুন! আজই আমাদের প্রোগ্রামে যোগ দিন এবং অন্যদের তাদের প্রিয় ইভেন্টের টিকিট খুঁজে পেতে সাহায্য করে অতিরিক্ত অর্থ উপার্জন শুরু করুন!!!"}
               </p>
               <div className="flex gap-4 text-black">
+                <Link href='/pages/take-ticket'>
                 <div className="flex justify-center w-40 items-center h-10 lg:h-14 px-4 bg-[#F9DC00] rounded-md cursor-pointer hover:shadow-md hover:scale-110 duration-300 text-[14px] md:text-[16px]">
                   {language === "en" ? "Take a Ticket" : "টিকিট নিন"}
                 </div>
+                </Link>
                 <div className="flex justify-center  items-center h-10 lg:h-14 w-40 bg-[#F9DC00] rounded-md cursor-pointer hover:shadow-md hover:scale-110 duration-300">
                   {language === "en" ? "Join as Reseller" : "বিক্রেতা হন"}
                 </div>

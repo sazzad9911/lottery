@@ -54,7 +54,7 @@ export default function Header() {
   return (
     <div className={`${pathname.split("/")[1] === "dashboard" && "hidden"}`}>
       <div
-        className={`w-full flex justify-center items-center z-10 ${pathname === '/' ? 'bg-[#98478664]':'bg-[#D94F72]'}  shadow-md h-[60px] md:h-[80px] overflow-hidden transition-transform duration-300 fixed ${
+        className={`w-full flex justify-center items-center z-10 ${pathname === '/' || pathname === '/pages/take-ticket' ? 'bg-[#98478664]':'bg-[#D94F72]'}  shadow-md h-[60px] md:h-[80px] overflow-hidden transition-transform duration-300 fixed ${
           showHeader ? "transform translate-y-0" : "transform -translate-y-full"
         }`}
       >
