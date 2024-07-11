@@ -35,7 +35,7 @@ function ComplainBox() {
               placeholder={
                 language === "en" ? "Write your name" : "তোমার নাম লিখ"
               }
-              className="w-full p-3 bg-[#D9D9D9] rounded-md"
+              className="w-full outline-[#D94F72] p-3 bg-[#D9D9D9] rounded-md"
             />
           </div>
           <div className="pb-4">
@@ -52,7 +52,7 @@ function ComplainBox() {
                   ? "Contact Number 11 digit"
                   : "যোগাযোগ নম্বর ১১ সংখ্যা"
               }
-              className="w-full p-3 bg-[#D9D9D9] rounded-md"
+              className="w-full outline-[#D94F72] p-3 bg-[#D9D9D9] rounded-md"
             />
           </div>
         </div>
@@ -63,7 +63,7 @@ function ComplainBox() {
               {language === "en" ? "Select a point" : "নির্বাচন করুন"}
             </label>
           </div>
-          <select className="w-full p-3 bg-[#D9D9D9] rounded-md mb-4">
+          <select className="w-full outline-[#D94F72] p-3 bg-[#D9D9D9] rounded-md mb-4">
             <option disabled selected>
               {language === "en" ? "Nothing Selected" : "নির্বাচিত নয়"}
             </option>
@@ -84,7 +84,7 @@ function ComplainBox() {
                 ? "Describe your problems"
                 : "সমস্যাগুলি বর্ণনা করুন"
             }
-            className="w-full p-5 bg-[#D9D9D9] rounded-md"
+            className="w-full outline-[#D94F72] p-5 bg-[#D9D9D9] rounded-md"
           ></textarea>
         </div>
 

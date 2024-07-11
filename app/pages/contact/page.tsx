@@ -136,7 +136,7 @@ export default function Contact() {
             <input
               type="text"
               placeholder={language ==="en"?"Name":"নাম"} 
-              className="w-full p-3 bg-[#D9D9D9] rounded-md"
+              className="w-full p-3 bg-[#D9D9D9] outline-[#D94F72] rounded-md"
             />
           </div>
           <div className="">
@@ -148,7 +148,7 @@ export default function Contact() {
             <input
               type="email"
               placeholder={language ==="en"?"Email":"ইমেইল"} 
-              className="w-full p-3 bg-[#D9D9D9] rounded-md"
+              className="w-full p-3 bg-[#D9D9D9] outline-[#D94F72] rounded-md"
             />
           </div>
          </div>
@@ -159,11 +159,11 @@ export default function Contact() {
             </label>
           <textarea
             placeholder={language ==="en"?"Describe your problems":"সমস্যাগুলি বর্ণনা করুন"}
-            className="w-full p-5 bg-[#D9D9D9] rounded-md"
+            className="w-full p-5 bg-[#D9D9D9] outline-[#D94F72] rounded-md"
           ></textarea>
         </div>
 
-        <div className="text-center pt-4">
+        <div className="text-center pt-4 mb-4 lg:mb-20">
           <input
             type="submit"
             value={language ==="en"?"SEND":"পাঠান"}
