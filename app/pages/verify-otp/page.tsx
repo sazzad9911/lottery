@@ -3,36 +3,33 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 
-export default function SignUp() {
-  const [mobileNumber, setMobileNumber] = useState("");
-  const router = useRouter()
-  const handleSignUp = (e: React.FormEvent) => {
+export default function VerifyOTP() {
+  const [otp, setOtp] = useState("");
+  const router = useRouter();
+  const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-
-    
-    console.log("Mobile Number:", mobileNumber);
-    router.push('/pages/verify-otp', { scroll: false })
+    // Handle login logic here
+    console.log("Mobile Number:", otp);
+    router.push("/pages/info", { scroll: false });
   };
   return (
     <div className="flex items-center justify-center min-h-screen">
       <div className="bg-[#D94F72] text-white px-4 md:px-16 py-8 rounded-md shadow-md w-full max-w-lg mx-2 font-light">
         <h2 className="text-[18px] md:text-[24px]  mb-4 text-center">
-          New Account
+        Verify OTP
         </h2>
         <p className="mb-6 text-center ">
-          Create a new account to enjoy personalized content, exclusive offers,
-          and seamless access to our services. Sign up by providing your
-          details, verifying your phone, and setting a secure password.
+        Enter the OTP sent to your email or phone to verify your account and complete the registration process. Need help? Contact support.
         </p>
-        <form onSubmit={handleSignUp}>
+        <form onSubmit={handleLogin}>
           <div className="mb-8">
-            <label className="block mb-1 ">Mobile Number</label>
+            <label className="block mb-1 ">OTP</label>
             <input
               type="text"
               className="w-full px-3 py-2 bg-[#D9D9D9] rounded-md text-black outline-[#D94F72]"
-              placeholder="Write your number..."
-              value={mobileNumber}
-              onChange={(e) => setMobileNumber(e.target.value)}
+              placeholder="Give your OTP..."
+              value={otp}
+              onChange={(e) => setOtp(e.target.value)}
               required
             />
           </div>
