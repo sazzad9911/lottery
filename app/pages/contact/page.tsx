@@ -2,11 +2,13 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { RootState } from "@/app/redux/store";
+
 export default function Contact() {
   const language = useSelector((state: RootState) => state.language.language);
   return (
-    <div className="container mx-auto px-2 md:px-8">
-      <h1 className="text-center text-2xl lg:text-4xl mb-10 text-[#000000] font-bold">
+  <div className="grid justify-items-center">
+    <div className="w-full max-w-5xl px-2 md:px-8 ">
+      <h1 className="text-center text-2xl lg:text-4xl mb-10 mt-5 text-[#000000] font-bold">
         {language === "en" ? "Contact Us" : "যোগাযোগ করুন"}
       </h1> 
 
@@ -169,5 +171,6 @@ export default function Contact() {
           />
         </div>
     </div>
+  </div>
   );
 }

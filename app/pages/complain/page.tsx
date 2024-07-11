@@ -6,7 +6,8 @@ import { RootState } from "@/app/redux/store";
 function ComplainBox() {
   const language = useSelector((state: RootState) => state.language.language);
   return (
-    <div className="container mx-auto px-2 md:px-8">
+    <div className="grid justify-items-center">
+    <div className="w-full max-w-5xl px-2 md:px-8">
       <div className="grid grid-cols-1 text-center pt-8 pb-5">
         <h1 className="text-2xl lg:text-4xl pb-5 text-[#000000] font-bold">
           {language === "en"
@@ -20,7 +21,7 @@ function ComplainBox() {
         </p>
       </div>
 
-      <form className="pb-20 gap-10">
+      <form className="pb-4 lg:pb-20 gap-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           <div className="">
             <div className="pb-3">
@@ -96,6 +97,7 @@ function ComplainBox() {
         </div>
       </form>
     </div>
+   </div>
   );
 }
 
