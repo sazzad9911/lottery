@@ -1,7 +1,10 @@
 "use client";
 import React, { useState } from "react";
+import { useSelector } from "react-redux";
+import { RootState } from "../redux/store";
 
 const TicketForm: React.FC = () => {
+  const language = useSelector((state: RootState) => state.language.language);
   const [mobileNumber, setMobileNumber] = useState("");
   const [reference, setReference] = useState("");
   const [quantity, setQuantity] = useState(1);
@@ -19,31 +22,37 @@ const TicketForm: React.FC = () => {
   return (
     <div className="max-w-md mx-auto">
       <div className="mb-4 md:mb-6">
-        <label className="block  font-semibold">Mobile Number</label>
+        <label className="block  font-semibold">
+         {language ==="en"?"Mobile Number":"মোবাইল নম্বর"} 
+          </label>
         <input
           type="text"
           className="mt-1 w-full px-3 py-2 rounded-md bg-[#D9D9D9] outline-[#D94F72]"
-          placeholder="Write your number..."
+          placeholder={language ==="en"?"Write your number":"নম্বর লিখুন"} 
           value={mobileNumber}
           onChange={(e) => setMobileNumber(e.target.value)}
         />
       </div>
       <div className="mb-4 md:mb-6">
         <label className="block  font-semibold">
-          Reference {"("}
-          <span className="text-[#D94F72]">Optional</span>
+        {language ==="en"?"Reference":"রেফারেন্স"} {"("}
+          <span className="text-[#D94F72]">
+          {language ==="en"?"Optional":"অপশনাল"}
+            </span>
           {")"}
         </label>
         <input
           type="text"
           className="mt-1 w-full px-3 py-2 rounded-md bg-[#D9D9D9] outline-[#D94F72]"
-          placeholder="Reference if any"
+          placeholder={language ==="en"?"Reference if any":"রেফারেন্স যদি থাকে"}
           value={reference}
           onChange={(e) => setReference(e.target.value)}
         />
       </div>
       <div className="mb-4 md:mb-6">
-        <label className="block font-semibold">Ticket Quantity</label>
+        <label className="block font-semibold">
+        {language ==="en"?"Ticket Quantity":"টিকিটের পরিমাণ"}
+          </label>
         <div className="flex items-center">
           <button className="" onClick={handleDecrement}>
             <svg
@@ -88,16 +97,18 @@ const TicketForm: React.FC = () => {
       </div>
       <div className="flex gap-2 md:gap-4 items-center flex-wrap">
         <div className=" font-semibold text-lg">
-          <span>Total Price: </span>
+          <span>
+          {language ==="en"?"Total Price:":"মোট দাম:"} 
+            </span>
           <span className="">
             <span className="text-[#CA5CB2]">
               {ticketPrice} × {quantity} - {discount} = {totalPrice}
             </span>{" "}
-            BDT
+            {language ==="en"?"BDT":"বিডিটি"} 
           </span>
         </div>
         <button className="px-10  font-semibold bg-[#F9DC00] text-black py-2 rounded-md">
-          Buy
+        {language ==="en"?"Buy":"ক্রয় করুন"} 
         </button>
       </div>
     </div>
