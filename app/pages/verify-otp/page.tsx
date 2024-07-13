@@ -2,8 +2,11 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import { RootState } from "@/app/redux/store";
 
 export default function VerifyOTP() {
+  const language = useSelector((state: RootState) => state.language.language);
   const [otp, setOtp] = useState("");
   const [timer, setTimer] = useState(10); // Timer set to 60 seconds
   const [resendAvailable, setResendAvailable] = useState(false);
@@ -35,19 +38,21 @@ export default function VerifyOTP() {
     <div className="flex items-center justify-center min-h-screen">
       <div className="bg-[#D94F72] text-white px-4 md:px-16 py-8 rounded-md shadow-md w-full max-w-lg mx-2 font-light">
         <h2 className="text-[18px] md:text-[24px]  mb-4 text-center">
-          Verify OTP
+        {language==="en"?"Verify OTP":"ওটিপি যাচাই করুন"}
         </h2>
         <p className="mb-6 text-center ">
-          Enter the OTP sent to your email or phone to verify your account and
-          complete the registration process. Need help? Contact support.
+        {language==="en"?"Enter the OTP sent to your email or phone to verify your account and complete the registration process. Need help? Contact support."
+          :"আপনার অ্যাকাউন্ট যাচাই করতে আপনার ইমেল বা ফোনে পাঠানো ওটিপি লিখুন এবং নিবন্ধন প্রক্রিয়া সম্পূর্ণ করুন। সাহায্য দরকার? যোগাযোগ সমর্থন।"} 
         </p>
         <form onSubmit={handleLogin}>
           <div className="">
-            <label className="block mb-1 ">OTP</label>
+            <label className="block mb-1 ">
+            {language==="en"?"OTP":"ওটিপি"}
+              </label>
             <input
               type="text"
               className="w-full px-3 py-2 bg-[#D9D9D9] rounded-md text-black outline-[#D94F72]"
-              placeholder="Give your OTP..."
+              placeholder={language==="en"?"Give your OTP":"আপনার ওটিপি দিন"}
               value={otp}
               onChange={(e) => setOtp(e.target.value)}
               required
@@ -59,11 +64,11 @@ export default function VerifyOTP() {
                 onClick={handleResendOTP}
                 className="text-[#F9DC00] hover:underline"
               >
-                Resend OTP
+                {language==="en"?"Resend OTP":"আবার ওটিপি পাঠান"}
               </button>
             ) : (
               <span className="text-[#F9DC00]">
-                Resend OTP in {timer} seconds
+                {language==="en"?"Resend OTP in":"আবার ওটিপি পাঠান"} {timer} {language==="en"?"seconds":"সেকেন্ড"}
               </span>
             )}
           </div>
@@ -71,13 +76,13 @@ export default function VerifyOTP() {
             type="submit"
             className="w-full bg-[#F9DC00] text-black py-2 rounded-md font-semibold hover:scale-105 duration-300"
           >
-            Next
+            {language==="en"?"Next":"পরবর্তী"} 
           </button>
         </form>
 
         <div className="mt-4 text-end">
           <Link href="/pages/login" className="text-[#F9DC00] hover:underline">
-            Back to login?
+            {language==="en"?"Back to login?":"প্রবেশ করতে পেছানে যান?"} 
           </Link>
         </div>
       </div>
