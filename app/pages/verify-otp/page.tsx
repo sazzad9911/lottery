@@ -82,7 +82,7 @@ export default function VerifyOTP() {
 
         <div className="mt-4 text-end">
           <Link href="/pages/login" className="text-[#F9DC00] hover:underline">
-            {language==="en"?"Back to login?":"প্রবেশ করতে পেছানে যান?"} 
+            {language==="en"?"Back to login?":"লগইন করতে পেছান?"} 
           </Link>
         </div>
       </div>

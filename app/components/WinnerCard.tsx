@@ -1,8 +1,11 @@
 import React from "react";
 import img from "../../public/images/dummy.png";
 import Image from "next/image";
+import { useSelector } from "react-redux";
+import { RootState } from "@/app/redux/store";
 
 export default function WinnerCard() {
+  const language = useSelector((state: RootState) => state.language.language);
   return (
     <div className="flex flex-col items-center">
       <div className=" h-20 w-20 md:h-40 md:w-40">
@@ -10,17 +13,19 @@ export default function WinnerCard() {
       </div>
       <div className="text-center md:space-y-1">
         <p className="text-[14px] md:text-[18px] font-bold ">
-          Kazi Nazrul Islam Lottery
+        {language==="en"?"Kazi Nazrul Islam Lottery":"কাজী নজরুল ইসলাম লটারি"}
         </p>
         <p className="text-[14px] md:text-[16px] font-light ">
-          1st Prize (10 Lakh)
+        {language==="en"?"1st Prize (10 Lakh)":"১ম পুরস্কার (১০ লাখ)"}
         </p>
-        <p className="text-[14px] md:text-[18px] font-normal ">Munia Islam</p>
+        <p className="text-[14px] md:text-[18px] font-normal ">
+        {language==="en"?"Munia Islam":"মুনিয়া ইসলাম"}
+          </p>
         <p className="text-[12px] md:text-[14px] font-light ">
-          Kurigram, Rangpur
+        {language==="en"?"Kurigram, Rangpur":"কুড়িগ্রাম, রংপুর"}
         </p>
         <p className="text-[12px] md:text-[14px] font-light ">
-          Draw Date: 11 Jun 2021
+        {language==="en"?"Draw Date: 11 Jun 2023":"ড্র তারিখ: 11 জুন 2023"}
         </p>
       </div>
     </div>
