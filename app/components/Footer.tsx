@@ -52,7 +52,7 @@ const Footer: React.FC = () => {
               <Link href="/pages/rules-act" className="text-[#CA5CB2] underline mx-2 text-[14px] md:text-[20px] ">
               {language === "en" ? "Lottery Rules & Act" : "লটারির নিয়ম ও আইন"}
               </Link>
-              <Link href="#" className="text-[#CA5CB2] underline mx-2 text-[14px] md:text-[20px] ">
+              <Link href="" className="text-[#CA5CB2] underline mx-2 text-[14px] md:text-[20px] ">
               {language === "en" ? "Privacy Policy" : "গোপনীয়তা নীতি"}
               </Link>
               <Link href="#" className="text-[#CA5CB2] underline mx-2 text-[14px] md:text-[20px] ">
@@ -61,7 +61,7 @@ const Footer: React.FC = () => {
               <Link href="#" className="text-[#CA5CB2] underline mx-2 text-[14px] md:text-[20px] ">
               {language === "en" ? "Site Map" : "সাইট মানচিত্র"}
               </Link>
-              <Link href="#" className="text-[#CA5CB2] underline mx-2 text-[14px] md:text-[20px] ">
+              <Link href="/pages/data-deletation" className="text-[#CA5CB2] underline mx-2 text-[14px] md:text-[20px] ">
               {language === "en" ? "Data Deletion Policy" : "ডেটা মুছে ফেলার নীতি"}
               </Link>
             </div>
