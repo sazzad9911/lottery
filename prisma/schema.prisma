@@ -55,7 +55,7 @@ model tickets {
   id            String    @id @default(auto()) @map("_id") @db.ObjectId
   price         Int
   phone         String
-  ticket_number Int    @unique
+  ticket_number Int       @unique
   eventId       String    @db.ObjectId
   event         Events    @relation(references: [id], fields: [eventId], onDelete: Cascade)
   date          DateTime  @default(now())
@@ -84,4 +84,13 @@ model results {
   event         Events     @relation(references: [id], fields: [eventId], onDelete: Cascade)
   positionId    String     @db.ObjectId
   prize         prize_list @relation(references: [id], fields: [positionId], onDelete: Cascade)
+}
+
+model contacts {
+  id      String  @id @default(auto()) @map("_id") @db.ObjectId
+  name    String
+  phone   String
+  point   String
+  message String
+  solved  Boolean @default(false)
 }

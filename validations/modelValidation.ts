@@ -27,18 +27,34 @@ const priceSchema = object({
     eventId: string().required()
 })
 const ticketSchema = object({
-    price: number().required().min(5, "Price is too low"),
-    phone: string().required().length(14, "Phone number is invalid! Form +880**********"),
+    amount: number().required().min(5, "Price is too low"),
+    phone: string().required().length(11, "Phone number is invalid! Form 0**********"),
     eventId: string().required(),
     ref: string().default(""),
-})
-const bkashPaymentSchema = object({
+    quantity: number().required().min(1),
+}) 
+const paymentSchema = object({
     phone: string().required().length(11, "Phone number is invalid! Form 0**********"),
     quantity: number().required().min(1),
     amount: string().required(),
     eventId: string().required(),
     ref: string().default(""),
 })
+const paymentUrlSchema = object({
+    phone: string().required().length(11, "Phone number is invalid! Form 0**********"),
+    quantity: number().required().min(1),
+    amount: string().required(),
+    eventId: string().required(),
+    ref: string().default(""),
+    redirectUrl:string().required(),
+    cancelUrl:string().required(),
+})
+const contactSchema=object({
+    name: string().required(),
+    phone: string().required().length(11, "Phone number is invalid! Form 0**********"),
+    message: string().required(),
+    point:string().required()
+})
 export {
-    eventSchema, eventUpdateSchema, priceSchema, ticketSchema, bkashPaymentSchema
+    eventSchema, eventUpdateSchema, priceSchema, ticketSchema, paymentSchema,paymentUrlSchema,contactSchema
 }

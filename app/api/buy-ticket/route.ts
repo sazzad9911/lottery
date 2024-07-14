@@ -1,32 +1,10 @@
 import prisma from "@/utils/prisma";
 import errorMessage from "@/validations/errorMessage";
-import { ticketSchema } from "@/validations/modelValidation";
+import { paymentSchema, paymentUrlSchema, ticketSchema } from "@/validations/modelValidation";
 import axios from "axios";
 import { NextRequest, NextResponse } from "next/server";
 
-const generateUnique7DigitNumber = async (): Promise<number> => {
-    let unique = false;
-    let uniqueNumber: number = 1334543;
 
-    while (!unique) {
-        // Generate a random 7-digit number
-        uniqueNumber = Math.floor(1000000 + Math.random() * 9000000);
-
-        // Check if the number exists in the database
-        const existingRecord = await prisma.tickets.findUnique({
-            where: {
-                ticket_number: uniqueNumber
-            }
-        });
-
-        // If no record is found, the number is unique
-        if (!existingRecord) {
-            unique = true;
-        }
-    }
-
-    return uniqueNumber;
-};
 const getActiveEvents = async (request: NextRequest) => {
     try {
         const event = await prisma.events.findMany({
@@ -45,12 +23,11 @@ const getActiveEvents = async (request: NextRequest) => {
     }
 }
 const requestPayment = async (request: NextRequest) => {
+    const host = request.headers.get("x-forwarded-host")
+    const proto = request.headers.get("x-forwarded-proto")
     try {
-        const data = await ticketSchema.validate(await request.json())
-        const ticket_number = await generateUnique7DigitNumber()
-        
-        
-        return NextResponse.json({})
+        const data = await paymentUrlSchema.validate(await request.json())
+        return NextResponse.json({ url: `${proto}://${host}/pay/${data.phone}?amount=${data.amount}&redirect=${data.redirectUrl}&cancelUrl=${data.cancelUrl}&ref=${data.ref}&quantity=${data.quantity}&eventId=${data.eventId}` })
     } catch (error) {
         return errorMessage(error, null)
     }

@@ -1,8 +1,9 @@
 import cache from "@/functions/cache";
 import generateRandomKey from "@/functions/randomKey";
 import errorMessage from "@/validations/errorMessage";
-import { bkashPaymentSchema } from "@/validations/modelValidation";
+import { paymentSchema } from "@/validations/modelValidation";
 import axios from "axios";
+import { cookies } from "next/headers";
 import { NextRequest, NextResponse } from "next/server";
 
 
@@ -15,9 +16,10 @@ const password = "sandboxTokenizedUser02@12345"
 const getBKashUrl = async (request: NextRequest) => {
     const host = request.headers.get("x-forwarded-host")
     const proto = request.headers.get("x-forwarded-proto")
+    const cookie = cookies()
 
     try {
-        const data = await bkashPaymentSchema.validate(await request.json())
+        const data = await paymentSchema.validate(await request.json())
         const callBack = `${proto}://${host}/pay/${data.phone}`
         const tokenRes = await axios.post(
             "https://tokenized.sandbox.bka.sh/v1.2.0-beta/tokenized/checkout/token/grant",
@@ -39,7 +41,7 @@ const getBKashUrl = async (request: NextRequest) => {
             return NextResponse.json({ error: "Get token failed" }, { status: 404 })
         const createPay = await axios.post("https://tokenized.sandbox.bka.sh/v1.2.0-beta/tokenized/checkout/create", {
             "mode": "0011",
-            "payerReference": data.phone,
+            "payerReference": "01877722345",
             "callbackURL": callBack,
             "amount": data.amount,
             "currency": "BDT",
@@ -55,12 +57,13 @@ const getBKashUrl = async (request: NextRequest) => {
         })
         const { bkashURL } = createPay.data
         if (!bkashURL) return NextResponse.json({ error: "Failed to get url" }, { status: 404 })
-        cache.set(data.phone, {
-            ref: data.ref,
-            eventId: data.eventId,
-            quantity: data.quantity,
-            amount: parseInt(data.amount)
-        })
+        // cookie.set(data.phone, JSON.stringify({
+        //     ref: data.ref,
+        //     eventId: data.eventId,
+        //     quantity: data.quantity,
+        //     amount: parseInt(data.amount)
+        // }))
+
         return NextResponse.json({ url: bkashURL })
     } catch (error: any) {
         return errorMessage(error, null)
