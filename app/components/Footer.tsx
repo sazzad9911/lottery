@@ -49,7 +49,7 @@ const Footer: React.FC = () => {
               </p>
             <FooterSocialSVG></FooterSocialSVG>
             <div className=" flex justify-center gap-2 md:gap-4 xl:gap-10 my-4 md:my-10 flex-wrap">
-              <Link href="#" className="text-[#CA5CB2] underline mx-2 text-[14px] md:text-[20px] ">
+              <Link href="/pages/rules-act" className="text-[#CA5CB2] underline mx-2 text-[14px] md:text-[20px] ">
               {language === "en" ? "Lottery Rules & Act" : "লটারির নিয়ম ও আইন"}
               </Link>
               <Link href="#" className="text-[#CA5CB2] underline mx-2 text-[14px] md:text-[20px] ">
