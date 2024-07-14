@@ -26,6 +26,19 @@ const priceSchema = object({
     description: string().max(500, "Description is too long").default(""),
     eventId: string().required()
 })
+const ticketSchema = object({
+    price: number().required().min(5, "Price is too low"),
+    phone: string().required().length(14, "Phone number is invalid! Form +880**********"),
+    eventId: string().required(),
+    ref: string().default(""),
+})
+const bkashPaymentSchema = object({
+    phone: string().required().length(11, "Phone number is invalid! Form 0**********"),
+    quantity: number().required().min(1),
+    amount: string().required(),
+    eventId: string().required(),
+    ref: string().default(""),
+})
 export {
-    eventSchema, eventUpdateSchema,priceSchema
+    eventSchema, eventUpdateSchema, priceSchema, ticketSchema, bkashPaymentSchema
 }
