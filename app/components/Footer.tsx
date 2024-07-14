@@ -55,7 +55,7 @@ const Footer: React.FC = () => {
               <Link href="" className="text-[#CA5CB2] underline mx-2 text-[14px] md:text-[20px] ">
               {language === "en" ? "Privacy Policy" : "গোপনীয়তা নীতি"}
               </Link>
-              <Link href="#" className="text-[#CA5CB2] underline mx-2 text-[14px] md:text-[20px] ">
+              <Link href="/pages/return-policy" className="text-[#CA5CB2] underline mx-2 text-[14px] md:text-[20px] ">
               {language === "en" ? "Return Policy" : "প্রত্যাবর্তন নীতি"}
               </Link>
               <Link href="#" className="text-[#CA5CB2] underline mx-2 text-[14px] md:text-[20px] ">
