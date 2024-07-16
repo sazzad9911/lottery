@@ -14,7 +14,9 @@ const liveDraw = async (request: NextRequest) => {
                 drawDate: "desc"
             },
             include: {
-                tickets: true
+                tickets: {
+                    take:15
+                }
             }
         })
         return NextResponse.json(theEvent)

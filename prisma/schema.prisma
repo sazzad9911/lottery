@@ -43,7 +43,7 @@ model Events {
 
 model prize_list {
   id          String    @id @default(auto()) @map("_id") @db.ObjectId
-  position    Int
+  position    Int       @unique
   amount      Int
   description String
   eventId     String    @db.ObjectId

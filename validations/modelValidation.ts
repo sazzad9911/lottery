@@ -18,7 +18,7 @@ const eventUpdateSchema = object({
     drawDate: date(),
     ticketPrice: number(),
     id: string().required("id is required!"),
-    live_link: string()
+    live_link: string(),
 })
 const priceSchema = object({
     position: number().required(),
@@ -55,6 +55,11 @@ const contactSchema=object({
     message: string().required(),
     point:string().required()
 })
+const resultSchema = object({
+    ticket_number:number().required(),
+    eventId:string().required(),
+    positionId:string().required()
+})
 export {
-    eventSchema, eventUpdateSchema, priceSchema, ticketSchema, paymentSchema,paymentUrlSchema,contactSchema
+    eventSchema, eventUpdateSchema, priceSchema, ticketSchema, paymentSchema,paymentUrlSchema,contactSchema,resultSchema
 }

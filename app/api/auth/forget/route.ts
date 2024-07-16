@@ -2,7 +2,7 @@ import jwt from "jsonwebtoken"
 import { encrypt } from "@/functions/JWT"
 import { NextRequest, NextResponse } from "next/server"
 import md5 from 'md5';
-import prisma from '@/libs/prisma';
+import prisma from "@/utils/prisma";
 const secret = process.env.SECRET || "cluster0"
 
 interface tokenTypes {

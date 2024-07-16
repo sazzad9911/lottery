@@ -33,7 +33,7 @@ const updateEvent = async (request: NextRequest) => {
                 ticketCloseTo: data.ticketCloseTo,
                 drawDate: data.drawDate,
                 ticketPrice: data.ticketPrice,
-                live_link:data.live_link
+                live_link: data.live_link
             },
             where: {
                 id: data.id
@@ -63,6 +63,25 @@ const getAllEvents = async (request: NextRequest) => {
         const events = await prisma.events.findMany({
             orderBy: {
                 date: "desc"
+            },
+            include: {
+                prize_list: {
+                    select: {
+                        amount: true,
+                        position: true,
+                        description: true,
+                        id: true
+                    }
+                },
+                tickets: {
+                    select: {
+                        ticket_number: true,
+                        date: true,
+                        phone: true,
+                        ref: true,
+                        id: true
+                    }
+                }
             }
         })
         return NextResponse.json(events)
@@ -70,4 +89,4 @@ const getAllEvents = async (request: NextRequest) => {
         return errorMessage(error, null)
     }
 }
-export { createEvent as POST, updateEvent as PUT, deleteEvent as DELETE,getAllEvents as GET }
+export { createEvent as POST, updateEvent as PUT, deleteEvent as DELETE, getAllEvents as GET }

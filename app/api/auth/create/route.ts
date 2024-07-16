@@ -39,7 +39,7 @@ function generateSixDigitNumber() {
 }
 
 const GET = async (request: NextRequest) => {
-    const number = request.nextUrl.searchParams.get("phoneNumber");
+    const number = request.nextUrl.searchParams.get("phoneNumber")?.split(" ").join("+");
     const forget = request.nextUrl.searchParams.get("forget");
     if (!number) {
         return NextResponse.json({ error: "Phone Number not found" }, { status: 404 });
