@@ -49,19 +49,19 @@ const Footer: React.FC = () => {
               </p>
             <FooterSocialSVG></FooterSocialSVG>
             <div className=" flex justify-center gap-2 md:gap-4 xl:gap-10 my-4 md:my-10 flex-wrap">
-              <Link href="/pages/rules-act" className="text-[#CA5CB2] underline mx-2 text-[14px] md:text-[20px] ">
+              <Link href="/pages/rules-act" className="text-[#CA5CB2] underline mx-2 text-[14px] md:text-[20px] hover:scale-105 duration-300">
               {language === "en" ? "Lottery Rules & Act" : "লটারির নিয়ম ও আইন"}
               </Link>
-              <Link href="/pages/privacy-policy" className="text-[#CA5CB2] underline mx-2 text-[14px] md:text-[20px] ">
+              <Link href="/pages/privacy-policy" className="text-[#CA5CB2] underline mx-2 text-[14px] md:text-[20px] hover:scale-105 duration-300">
               {language === "en" ? "Privacy Policy" : "গোপনীয়তা নীতি"}
               </Link>
-              <Link href="/pages/return-policy" className="text-[#CA5CB2] underline mx-2 text-[14px] md:text-[20px] ">
+              <Link href="/pages/return-policy" className="text-[#CA5CB2] underline mx-2 text-[14px] md:text-[20px] hover:scale-105 duration-300">
               {language === "en" ? "Return Policy" : "প্রত্যাবর্তন নীতি"}
               </Link>
-              <Link href="/pages/site-map" className="text-[#CA5CB2] underline mx-2 text-[14px] md:text-[20px] ">
+              <Link href="/pages/site-map" className="text-[#CA5CB2] underline mx-2 text-[14px] md:text-[20px] hover:scale-105 duration-300">
               {language === "en" ? "Site Map" : "সাইট মানচিত্র"}
               </Link>
-              <Link href="/pages/data-deletation" className="text-[#CA5CB2] underline mx-2 text-[14px] md:text-[20px] ">
+              <Link href="/pages/data-deletation" className="text-[#CA5CB2] underline mx-2 text-[14px] md:text-[20px] hover:scale-105 duration-300">
               {language === "en" ? "Data Deletion Policy" : "ডেটা মুছে ফেলার নীতি"}
               </Link>
             </div>

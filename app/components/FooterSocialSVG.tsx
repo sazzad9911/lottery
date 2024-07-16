@@ -6,7 +6,7 @@ export default function FooterSocialSVG() {
     <div className="flex justify-center items-center gap-2 md:gap-6 xl:gap-10">
       <Link href="#" className="mx-2">
         <svg
-          className="h-6 w-6 md:h-10 md:w-10 lg:h-20 lg:w-20"
+          className="h-6 w-6 md:h-10 md:w-10 lg:h-20 lg:w-20 hover:scale-110 duration-300"
           viewBox="0 0 66 68"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -19,7 +19,7 @@ export default function FooterSocialSVG() {
       </Link>
       <Link href="#" className="mx-2">
         <svg
-         className="h-6 w-6 md:h-10 md:w-10 lg:h-20 lg:w-20"
+         className="h-6 w-6 md:h-10 md:w-10 lg:h-20 lg:w-20 hover:scale-110 duration-300"
           viewBox="0 0 72 74"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -32,7 +32,7 @@ export default function FooterSocialSVG() {
       </Link>
       <Link href="#" className="mx-2">
         <svg
-         className="h-6 w-6 md:h-10 md:w-10 lg:h-20 lg:w-20"
+         className="h-6 w-6 md:h-10 md:w-10 lg:h-20 lg:w-20 hover:scale-110 duration-300"
           viewBox="0 0 72 74"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -45,7 +45,7 @@ export default function FooterSocialSVG() {
       </Link>
       <Link href="#" className="mx-2">
         <svg
-          className="h-6 w-6 md:h-10 md:w-10 lg:h-20 lg:w-20"
+          className="h-6 w-6 md:h-10 md:w-10 lg:h-20 lg:w-20 hover:scale-110 duration-300"
           viewBox="0 0 78 66"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -58,7 +58,7 @@ export default function FooterSocialSVG() {
       </Link>
       <Link href="#" className="mx-2">
         <svg
-          className="h-6 w-6 md:h-10 md:w-10 lg:h-20 lg:w-20"
+          className="h-6 w-6 md:h-10 md:w-10 lg:h-20 lg:w-20 hover:scale-110 duration-300"
           viewBox="0 0 78 68"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -71,7 +71,7 @@ export default function FooterSocialSVG() {
       </Link>
       <Link href="#" className="mx-2">
         <svg
-         className="h-6 w-6 md:h-10 md:w-10 lg:h-20 lg:w-20"
+         className="h-6 w-6 md:h-10 md:w-10 lg:h-20 lg:w-20 hover:scale-110 duration-300"
           viewBox="0 0 66 68"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
