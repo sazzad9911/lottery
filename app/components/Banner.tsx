@@ -124,7 +124,7 @@ export default function Banner() {
         {/* modal for selection  */}
         <Modal size="xs" isCentered isOpen={isOpen} onClose={onClose}>
           <ModalOverlay />
-          <ModalContent backgroundColor="tomato">
+          <ModalContent backgroundColor="#D94F72">
             <ModalHeader color="white">Select a slot</ModalHeader>
             <ModalCloseButton color="white" />
             <ModalBody>
