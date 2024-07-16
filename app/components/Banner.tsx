@@ -8,14 +8,29 @@ import people2 from "../../public/images/People2.png";
 import people3 from "../../public/images/People3.png";
 import bg from "../../public/images/bg.png";
 import Link from "next/link";
+import {
+  Modal,
+  ModalBody,
+  ModalCloseButton,
+  ModalContent,
+  ModalHeader,
+  ModalOverlay,
+  Radio,
+  RadioGroup,
+  Stack,
+  Text,
+  useDisclosure,
+} from "@chakra-ui/react";
+import { useRouter } from "next/navigation";
 
 export default function Banner() {
+  const { isOpen, onOpen, onClose } = useDisclosure();
   const language = useSelector((state: RootState) => state.language.language);
   const images = [people2, people1, people3];
-
+  const [value, setValue] = React.useState("uddokta");
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [loaded, setLoaded] = useState(false);
-
+  const route = useRouter();
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
@@ -26,6 +41,10 @@ export default function Banner() {
 
   const handleLoad = () => {
     setLoaded(true);
+  };
+  const handleChange = (value: string) => {
+    setValue(value);
+    route.push(`/pages/take-ticket?value=${value}`);
   };
   return (
     <div className="bg-gradient-to-r from-[#FF3742] to-[#B40309]">
@@ -67,11 +86,17 @@ export default function Banner() {
                   : "আপনি পুনরায় বিক্রি করা প্রতিটি টিকিটে 5% কমিশন উপার্জন করুন! আজই আমাদের প্রোগ্রামে যোগ দিন এবং অন্যদের তাদের প্রিয় ইভেন্টের টিকিট খুঁজে পেতে সাহায্য করে অতিরিক্ত অর্থ উপার্জন শুরু করুন!!!"}
               </p>
               <div className="flex gap-4 text-black">
-                <Link href="/pages/take-ticket">
+                {/* <Link href="/pages/take-ticket">
                   <div className="flex justify-center w-40 items-center h-10 lg:h-14 px-4 bg-[#F9DC00] rounded-md cursor-pointer hover:shadow-md hover:scale-110 duration-300 text-[14px] md:text-[16px]">
                     {language === "en" ? "Take a Ticket" : "টিকিট নিন"}
                   </div>
-                </Link>
+                </Link> */}
+                <div
+                  onClick={onOpen}
+                  className="flex justify-center w-40 items-center h-10 lg:h-14 px-4 bg-[#F9DC00] rounded-md cursor-pointer hover:shadow-md hover:scale-110 duration-300 text-[14px] md:text-[16px]"
+                >
+                  {language === "en" ? "Take a Ticket" : "টিকিট নিন"}
+                </div>
                 <Link href="/pages/login">
                   <div className="flex justify-center  items-center h-10 lg:h-14 w-40 bg-[#F9DC00] rounded-md cursor-pointer hover:shadow-md hover:scale-110 duration-300">
                     {language === "en" ? "Join as Reseller" : "বিক্রেতা হন"}
@@ -96,6 +121,33 @@ export default function Banner() {
             </div>
           </div>
         </div>
+        {/* modal for selection  */}
+        <Modal size="xs" isCentered isOpen={isOpen} onClose={onClose}>
+          <ModalOverlay />
+          <ModalContent backgroundColor="tomato">
+            <ModalHeader color="white">Select a slot</ModalHeader>
+            <ModalCloseButton color="white" />
+            <ModalBody>
+              <RadioGroup
+                className="mb-4"
+                onChange={handleChange}
+                value={value}
+              >
+                <Stack gap={6} direction="column">
+                  <Radio  value="uddokta1">
+                    <Text color="white"> uddokta1</Text>
+                  </Radio>
+                  <Radio value="uddokta2">
+                    <Text color="white"> uddokta2</Text>
+                  </Radio>
+                  <Radio value="uddokta3">
+                    <Text color="white"> uddokta3</Text>
+                  </Radio>
+                </Stack>
+              </RadioGroup>
+            </ModalBody>
+          </ModalContent>
+        </Modal>
       </div>
     </div>
   );
