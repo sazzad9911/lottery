@@ -21,7 +21,7 @@ const createResult = async (request: NextRequest) => {
 const getResults=async (request: NextRequest)=>{
     const eventId= request.nextUrl.searchParams.get("eventId");
     try {
-        const results=prisma.results.findMany({
+        const results=await prisma.results.findMany({
             where:{
                 eventId:eventId || undefined
             }
