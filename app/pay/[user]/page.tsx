@@ -39,6 +39,7 @@ export default function Pay({ params }: { params: { user: string } }) {
       setTickets(strTick);
       setMyStatus("success");
       setLoader(false);
+      window.location.href = `${redirectUrl}?tickets=${strTick}`
     } catch (error: any) {
       console.log(error.response.data.error);
       toast.error(error.response.data.error, { autoClose: 3000 });
