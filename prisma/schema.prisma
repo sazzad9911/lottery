@@ -14,14 +14,16 @@ datasource db {
 }
 
 model Users {
-  id        String   @id @default(auto()) @map("_id") @db.ObjectId
-  phone     String   @unique
+  id        String      @id @default(auto()) @map("_id") @db.ObjectId
+  phone     String      @unique
   password  String
   name      String
   pushToken String?
-  balance   Float    @default(0)
-  isAdmin   Boolean  @default(false)
-  date      DateTime @default(now())
+  balance   Float       @default(0)
+  isAdmin   Boolean     @default(false)
+  username  String      @unique
+  date      DateTime    @default(now())
+  withdraws withdraws[]
 }
 
 model Events {
@@ -93,4 +95,15 @@ model contacts {
   point   String
   message String
   solved  Boolean @default(false)
+}
+
+model withdraws {
+  id            String   @id @default(auto()) @map("_id") @db.ObjectId
+  userId        String   @db.ObjectId
+  user          Users    @relation(references: [id], fields: [userId], onDelete: Cascade)
+  amount        Float
+  date          DateTime @default(now())
+  accountNumber String
+  accountType   String
+  walletType    String
 }

@@ -5,6 +5,8 @@ import { encrypt } from "@/functions/JWT";
 import { LRUCache } from 'lru-cache'
 import sendSMS from "@/functions/sendSMS";
 import prisma from "@/utils/prisma";
+import { userSchema } from "@/validations/modelValidation";
+import errorMessage from "@/validations/errorMessage";
 const secret = process.env.SECRET || "cluster0"
 interface RequestCount {
     count: number;
@@ -27,6 +29,7 @@ interface requestTypes {
     name: string,
     password: string,
     token: string,
+    username: string
 }
 function generateSixDigitNumber() {
     // Generate a random number between 0 and 999999
@@ -105,33 +108,23 @@ const GET = async (request: NextRequest) => {
 
 const POST = async (request: NextRequest) => {
 
-    const { name, password, token } = await request.json() as requestTypes
-
-    if (!name || !password || !token) {
-        return NextResponse.json({ error: "Some fields are required" }, { status: 404 })
-    }
-    if (name.length < 4 || name.length > 20) {
-        return NextResponse.json({ error: "Name field is between 4 to 20 character" }, { status: 404 })
-    }
-    if (password.length < 6 || password.length > 20) {
-        return NextResponse.json({ error: "Password field is between 6 to 20 character" }, { status: 404 })
-    }
     try {
-        
-        const { number } = jwt.verify(token, secret) as tokenTypes
-        const encryptedPassword = md5(password);
+        const data = await userSchema.validate(await request.json())
+        const { number } = jwt.verify(data.token, secret) as tokenTypes
+        const encryptedPassword = md5(data.password);
         const user = await prisma.users.create({
             data: {
-                name: name,
+                name: data.name,
                 phone: number,
                 password: encryptedPassword,
+                username: data.username
             }
         })
         const userToken = await encrypt(user.id.toString(), secret)
         return NextResponse.json({ user, userToken })
 
     } catch (error) {
-        return NextResponse.json({ error: "Failed to sign in with the device token", code: error }, { status: 400 })
+        return errorMessage(error, null, "Username")
     }
 }
 
