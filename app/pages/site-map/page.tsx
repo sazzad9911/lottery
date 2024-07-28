@@ -241,44 +241,104 @@ const SiteMap: React.FC = () => {
              : "সক্রিয় ডিল এবং ডিসকাউন্ট"}              
               </li>
           </ul>
-          <li>Loyalty Program</li>
+          <li>
+          {language === "en"
+             ? "Loyalty Program" 
+             : "বিশ্বস্ততা প্রোগ্রাম"}           
+            </li>
           <ul className="list-disc ml-6 mb-2">
-            <li>Benefits and How to Join</li>
+            <li>
+            {language === "en"
+             ? "Benefits and How to Join" 
+             : "সুবিধা এবং যোগদান কিভাবে"}              
+              </li>
           </ul>
-          <li>Refer a Friend</li>
+          <li>
+          {language === "en"
+             ? "Refer a Friend" 
+             : "একটা বন্ধুকে রেফার কর"}           
+            </li>
           <ul className="list-disc ml-6 mb-2">
-            <li>Referral Bonuses</li>
+            <li>
+            {language === "en"
+             ? "Referral Bonuses" 
+             : "রেফারেল বোনাস"}             
+              </li>
           </ul>
         </ul>
       </section>
 
       <section className="mb-6">
-        <h2 className="text-2xl font-medium mb-2">Contact Us</h2>
+        <h2 className="text-2xl font-medium mb-2">
+        {language === "en"
+             ? "Contact Us" 
+             : "যোগাযোগ করুন"}           
+          </h2>
         <ul className="list-disc ml-6 mb-2">
-          <li>Customer Support</li>
+          <li>
+          {language === "en"
+             ? "Customer Support" 
+             : "গ্রাহক সমর্থন"}            
+            </li>
           <ul className="list-disc ml-6 mb-2">
-            <li>Email and Phone Support</li>
-            <li>Live Chat</li>
+            <li>
+            {language === "en"
+             ? "Email and Phone Support" 
+             : "ইমেল এবং ফোন সমর্থন"}              
+              </li>
+            <li>
+            {language === "en"
+             ? " Live Chat" 
+             : "সরাসরি কথোপকথন"}             
+              </li>
           </ul>
-          <li>Office Locations</li>
+          <li>
+          {language === "en"
+             ? "Office Locations" 
+             : "অফিসের অবস্থান"}            
+            </li>
           <ul className="list-disc ml-6 mb-2">
-            <li>Address and Maps</li>
+            <li>
+            {language === "en"
+             ? "Address and Maps" 
+             : "ঠিকানা এবং মানচিত্র"}               
+              </li>
           </ul>
         </ul>
       </section>
 
       <footer className="mt-6 border-t pt-4">
-        <h2 className="text-xl font-medium mb-2">Footer</h2>
+        <h2 className="text-xl font-medium mb-2">
+        {language === "en"
+             ? "Footer" 
+             : "ফুটার"}         
+          </h2>
         <ul className="list-disc ml-6 mb-2">
-          <li>Terms of Service</li>
-          <li>Privacy Policy</li>
-          <li>Site Map (link)</li>
-          <li>Social Media Links (Facebook, Twitter, Instagram, etc.)</li>
+          <li>
+          {language === "en"
+             ? "Terms of Service" 
+             : "সেবা পাবার শর্ত"}             
+            </li>
+          <li>
+          {language === "en"
+             ? "Privacy Policy" 
+             : "গোপনীয়তা নীতি"}            
+            </li>
+          <li>
+          {language === "en"
+             ? "Site Map (link)" 
+             : "সাইট ম্যাপ (লিংক)"}            
+            </li>
+          <li>
+          {language === "en"
+             ? "Social Media Links (Facebook, Twitter, Instagram, etc.)" 
+             : "সোশ্যাল মিডিয়া লিংক (ফেসবুক, টুইটার, ইনস্টাগ্রাম, ইত্যাদি)"}            
+            </li>
         </ul>
         <p>
-          This site map outlines the key sections and pages of the Dear Lottery
-          website, providing a clear structure to ensure easy navigation and a
-          user-friendly experience.
+        {language === "en"
+             ? "This site map outlines the key sections and pages of the Dear Lottery website,providing a clear structure to ensure easy navigation and a user-friendly experience." 
+             : "এই সাইট ম্যাপটি প্রিয় লটারি ওয়েবসাইটের মূল বিভাগ এবং পৃষ্ঠাগুলির রূপরেখা দেয়, সহজে নেভিগেশন এবং ব্যবহারকারী-বান্ধব অভিজ্ঞতা নিশ্চিত করার জন্য একটি পরিষ্কার কাঠামো প্রদান করে।"} 
         </p>
       </footer>
     </div>
