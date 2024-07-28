@@ -1,89 +1,245 @@
-import React from 'react';
+"use client";
+import React from "react";
+import { useSelector } from "react-redux";
+import { RootState } from "@/app/redux/store";
 
 const SiteMap: React.FC = () => {
+  const language = useSelector((state: RootState) => state.language.language);
   return (
     <div className="container mx-auto px-2 md:px-8">
-      <h1 className="text-3xl font-medium mb-4">Site Map</h1>
+      <h1 className="text-3xl font-medium mb-4">
+        {language === "en" ? "Site Map" : "সাইট ম্যাপ"}
+      </h1>
       <section className="mb-6">
-        <h2 className="text-2xl font-medium mb-2">Home</h2>
+        <h2 className="text-2xl font-medium mb-2">
+          {language === "en" ? "Home" : "হোম"}
+        </h2>
         <ul className="list-disc ml-6 mb-2">
-          <li>Overview of Dear Lottery</li>
-          <li>Featured lottery events and promotions</li>
-          <li>Latest news and updates</li>
-          <li>Live Draw</li>
+          <li>
+            {language === "en"
+              ? "Overview of Dear Lottery"
+              : "ডিয়ার লটারি ওভারভিউ"}
+          </li>
+          <li>
+            {language === "en"
+              ? "Featured lottery events and promotions"
+              : "বৈশিষ্ট্যযুক্ত লটারি ইভেন্ট এবং প্রচার"}
+          </li>
+          <li>
+            {language === "en"
+              ? "Latest news and updates"
+              : "সর্বশেষ খবর এবং আপডেট"}
+          </li>
+          <li>
+            {language === "en"
+             ? "Live Draw" 
+             : "লাইভ ড্র"}
+             </li>
         </ul>
       </section>
 
       <section className="mb-6">
-        <h2 className="text-2xl font-medium mb-2">Company History</h2>
+        <h2 className="text-2xl font-medium mb-2">
+        {language === "en"
+             ? "Company History" 
+             : "প্রতিষ্ঠানের ইতিহাস"}
+          </h2>
         <ul className="list-disc ml-6 mb-2">
-          <li>Mission and Vision</li>
-          <li>Team</li>
-          <li>Testimonials</li>
+          <li>
+          {language === "en"
+             ? "Mission and Vision" 
+             : "মিশন এবং ভিশন"}            
+            </li>
+          <li>
+          {language === "en"
+             ? "Team" 
+             : "টীম"}             
+            </li>
+          <li>
+          {language === "en"
+             ? "Testimonials" 
+             : "প্রশংসাপত্র"}
+            </li>
         </ul>
       </section>
 
       <section className="mb-6">
-        <h2 className="text-2xl font-medium mb-2">Result</h2>
+        <h2 className="text-2xl font-medium mb-2">
+        {language === "en"
+             ? "Result" 
+             : "ফলাফল"}          
+          </h2>
         <ul className="list-disc ml-6 mb-2">
-          <li>Current Lotteries</li>
+          <li>
+          {language === "en"
+             ? "Current Lotteries" 
+             : "বর্তমান লটারি"}            
+            </li>
           <ul className="list-disc ml-6 mb-2">
-            <li>List of Active Lottery Events</li>
-            <li>Details and Ticket Purchase Options</li>
+            <li>
+            {language === "en"
+             ? "List of Active Lottery Events" 
+             : "সক্রিয় লটারি ইভেন্টের তালিকা"}              
+              </li>
+            <li>
+            {language === "en"
+             ? "Details and Ticket Purchase Options" 
+             : "বিশদ বিবরণ এবং টিকিট ক্রয়ের বিকল্প"}               
+              </li>
           </ul>
-          <li>Upcoming Lotteries</li>
+          <li>
+          {language === "en"
+             ? "Upcoming Lotteries" 
+             : "আসন্ন লটারি"}             
+            </li>
           <ul className="list-disc ml-6 mb-2">
-            <li>Calendar of Future Events</li>
-            <li>Early Bird Offers and Information</li>
+            <li>
+            {language === "en"
+             ? "Calendar of Future Events" 
+             : "ভবিষ্যতের ইভেন্টের ক্যালেন্ডার"}              
+              </li>
+            <li>
+            {language === "en"
+             ? "Early Bird Offers and Information" 
+             : "প্রারম্ভিক পাখি অফার এবং তথ্য"}             
+              </li>
           </ul>
-          <li>Past Lotteries</li>
+          <li>
+          {language === "en"
+             ? "Past Lotteries" 
+             : "অতীত লটারি"}             
+            </li>
           <ul className="list-disc ml-6 mb-2">
-            <li>Archive of Completed Lotteries</li>
-            <li>Winning Numbers and Payouts</li>
+            <li>
+            {language === "en"
+             ? "Archive of Completed Lotteries" 
+             : "সমাপ্ত লটারি সংরক্ষণাগার"}              
+              </li>
+            <li>
+            {language === "en"
+             ? "Winning Numbers and Payouts" 
+             : "বিজয়ী নম্বর এবং পেআউট"}               
+              </li>
           </ul>
         </ul>
       </section>
 
       <section className="mb-6">
-        <h2 className="text-2xl font-medium mb-2">Buy Tickets</h2>
+        <h2 className="text-2xl font-medium mb-2">
+        {language === "en"
+             ? "Buy Tickets" 
+             : "টিকেট কেনা"}          
+          </h2>
         <ul className="list-disc ml-6 mb-2">
-          <li>How to Buy</li>
+          <li>
+          {language === "en"
+             ? "How to Buy" 
+             : "কিভাবে কিনবো"}            
+            </li>
           <ul className="list-disc ml-6 mb-2">
-            <li>Step-by-Step Guide</li>
-            <li>Payment Options</li>
-            <li>Ticket Prices</li>
-            <li>Special Offers</li>
+            <li>
+            {language === "en"
+             ? "Step-by-Step Guide" 
+             : "ধাপে ধাপে নির্দেশিকা"}              
+              </li>
+            <li>
+            {language === "en"
+             ? "Payment Options" 
+             : "পেমেন্ট অপশন"}              
+              </li>
+            <li>
+            {language === "en"
+             ? "Ticket Prices" 
+             : "টিকেট মূল্য"}               
+              </li>
+            <li>
+            {language === "en"
+             ? "Special Offers" 
+             : "বিশেষ অফার"}              
+              </li>
           </ul>
-          <li>Reseller Program</li>
+          <li>
+          {language === "en"
+             ? "Reseller Program" 
+             : "রিসেলার প্রোগ্রাম"}            
+            </li>
           <ul className="list-disc ml-6 mb-2">
-            <li>Earn Commissions</li>
-            <li>How to Join</li>
+            <li>
+            {language === "en"
+             ? "Earn Commissions" 
+             : "কমিশন উপার্জন"}               
+              </li>
+            <li>
+            {language === "en"
+             ? "How to Join" 
+             : "কিভাবে জয়েন করবেন"}               
+              </li>
           </ul>
         </ul>
       </section>
 
       <section className="mb-6">
-        <h2 className="text-2xl font-medium mb-2">Results</h2>
+        <h2 className="text-2xl font-medium mb-2">
+        {language === "en"
+             ? "Results" 
+             : "ফলাফল"}          
+          </h2>
         <ul className="list-disc ml-6 mb-2">
-          <li>Latest Results</li>
+          <li>
+          {language === "en"
+             ? "Latest Results" 
+             : "সর্বশেষ ফলাফল"}            
+            </li>
           <ul className="list-disc ml-6 mb-2">
-            <li>Most Recent Draws</li>
-            <li>Winning Numbers</li>
+            <li>
+            {language === "en"
+             ? "Most Recent Draws" 
+             : "সবচেয়ে সাম্প্রতিক ড্র"}             
+              </li>
+            <li>
+            {language === "en"
+             ? "Winning Numbers" 
+             : "বিজয়ী সংখ্যা"}              
+              </li>
           </ul>
-          <li>Historical Results</li>
+          <li>
+          {language === "en"
+             ? "Historical Results" 
+             : "ঐতিহাসিক ফলাফল"}           
+            </li>
           <ul className="list-disc ml-6 mb-2">
-            <li>Archive by Date</li>
-            <li>Searchable Database</li>
+            <li>
+            {language === "en"
+             ? "Archive by Date" 
+             : "তারিখ অনুযায়ী সংরক্ষণাগার"}              
+              </li>
+            <li>
+            {language === "en"
+             ? "Searchable Database" 
+             : "অনুসন্ধানযোগ্য ডাটাবেস"}              
+              </li>
           </ul>
         </ul>
       </section>
 
       <section className="mb-6">
-        <h2 className="text-2xl font-medium mb-2">Promotions</h2>
+        <h2 className="text-2xl font-medium mb-2">
+        {language === "en"
+             ? "Promotions" 
+             : "প্রচার"}         
+          </h2>
         <ul className="list-disc ml-6 mb-2">
-          <li>Current Promotions</li>
+          <li>
+          {language === "en"
+             ? "Current Promotions" 
+             : "বর্তমান প্রচার"}             
+            </li>
           <ul className="list-disc ml-6 mb-2">
-            <li>Active Deals and Discounts</li>
+            <li>
+            {language === "en"
+             ? "Active Deals and Discounts" 
+             : "সক্রিয় ডিল এবং ডিসকাউন্ট"}              
+              </li>
           </ul>
           <li>Loyalty Program</li>
           <ul className="list-disc ml-6 mb-2">
@@ -119,7 +275,11 @@ const SiteMap: React.FC = () => {
           <li>Site Map (link)</li>
           <li>Social Media Links (Facebook, Twitter, Instagram, etc.)</li>
         </ul>
-        <p>This site map outlines the key sections and pages of the Dear Lottery website, providing a clear structure to ensure easy navigation and a user-friendly experience.</p>
+        <p>
+          This site map outlines the key sections and pages of the Dear Lottery
+          website, providing a clear structure to ensure easy navigation and a
+          user-friendly experience.
+        </p>
       </footer>
     </div>
   );
