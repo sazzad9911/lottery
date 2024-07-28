@@ -99,10 +99,10 @@ const GET = async (request: NextRequest) => {
 
     } catch (error: any) {
 
-        if (error.response.data?.status === "error") {
+        if (error.response?.data?.status === "error") {
             return NextResponse.json({ error: "Invalid Phone Number" }, { status: 400 });
         }
-        return NextResponse.json({ error: "Failed to generate token" }, { status: 400 });
+        return NextResponse.json({ error: "Failed to generate token",code:error }, { status: 400 });
     }
 }
 

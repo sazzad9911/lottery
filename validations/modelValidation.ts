@@ -67,8 +67,7 @@ const userSchema = object({
     username: string().required().max(6)
 })
 const walletSchema = object({
-    userId: string().required(),
-    amount: number().required(),
+    amount: number().required().min(100,"Minimum withdraw amount 100BDT"),
     accountNumber: string().required().min(11, "Invalid number").max(12, "Invalid Number"),
     accountType: string().required(),
     walletType: string().required()

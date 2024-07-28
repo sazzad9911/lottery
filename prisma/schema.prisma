@@ -106,4 +106,5 @@ model withdraws {
   accountNumber String
   accountType   String
   walletType    String
+  status        String @default("PENDING")
 }

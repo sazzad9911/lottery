@@ -18,4 +18,4 @@ const getSells = async (request: NextRequest) => {
         return errorMessage(error, null)
     }
 }
-export { getSells }
+export { getSells as GET }
