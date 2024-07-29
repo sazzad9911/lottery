@@ -146,7 +146,9 @@ export default function Header() {
               className="flex items-center justify-between"
               borderBottomWidth="1px"
             >
-              <p className="text-[#FFFFFF]">BD Lottery</p>
+              <p className="text-[#FFFFFF]">
+              {language === "en" ? "BD Lottery" : "বিডি লটারি"}               
+                </p>
               <AiOutlineClose
                 onClick={onCloseNav}
                 className="h-7 w-7 text-[#FFFFFF] hover:scale-105 duration-300 cursor-pointer"
