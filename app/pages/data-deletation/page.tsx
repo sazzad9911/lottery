@@ -80,30 +80,44 @@ const DataDeletionPolicy = () => {
             : "৩. ডেটা মুছে ফেলা:"}         
           </h3>
         <p className="mb-4">
-          Once your request is verified and approved, we will delete your
-          personal data from our active systems and databases. This process will
-          be completed within 30 days of receiving your verified request.
+        {language === "en"
+            ? "Once your request is verified and approved, we will delete your personal data from our active systems and databases. This process will be completed within 30 days of receiving your verified request."
+            : "একবার আপনার অনুরোধ যাচাই এবং অনুমোদিত হলে, আমরা আমাদের সক্রিয় সিস্টেম এবং ডাটাবেস থেকে আপনার ব্যক্তিগত ডেটা মুছে দেব। এই প্রক্রিয়াটি আপনার যাচাইকৃত অনুরোধ পাওয়ার 30 দিনের মধ্যে সম্পন্ন হবে।"}
         </p>
-        <h3 className="text-xl font-medium mb-1">4. Notification:</h3>
+        <h3 className="text-xl font-medium mb-1">
+        {language === "en"
+            ? "4. Notification:"
+            : "৪. বিজ্ঞপ্তি:"}          
+          </h3>
         <p>
-          After your data has been deleted, we will notify you to confirm that
-          the deletion process has been completed.
+        {language === "en"
+            ? "After your data has been deleted, we will notify you to confirm that the deletion process has been completed."
+            : "আপনার ডেটা মুছে ফেলার পরে, আমরা মুছে ফেলার প্রক্রিয়া সম্পন্ন হয়েছে তা নিশ্চিত করার জন্য আপনাকে অবহিত করব।"}
         </p>
       </section>
 
       <section className="mb-6">
-        <h2 className="text-2xl font-medium mb-2">Important Considerations</h2>
+        <h2 className="text-2xl font-medium mb-2">
+        {language === "en"
+            ? "Important Considerations"
+            : "গুরুত্বপূর্ণ বিবেচনা"}         
+          </h2>
         <h3 className="text-xl font-medium mb-1">
-          1. Data Retention Requirements:
+        {language === "en"
+            ? "1. Data Retention Requirements:"
+            : "১. ডেটা ধরে রাখার প্রয়োজনীয়তা:"}
         </h3>
         <p className="mb-4">
-          Certain data may need to be retained for a specified period due to
-          legal, regulatory, or contractual obligations. In such cases, we will
-          inform you about the data we are required to keep and the reasons for
-          its retention.
+        {language === "en"
+            ? "Certain data may need to be retained for a specified period due to legal, regulatory, or contractual obligations. In such cases, we will inform you about the data we are required to keep and the reasons for its retention."
+            : "আইনি, নিয়ন্ত্রক, বা চুক্তিগত বাধ্যবাধকতার কারণে নির্দিষ্ট সময়ের জন্য নির্দিষ্ট ডেটা ধরে রাখতে হবে। এই ধরনের ক্ষেত্রে, আমাদের যে ডেটা রাখতে হবে এবং এটি ধরে রাখার কারণগুলি সম্পর্কে আমরা আপনাকে অবহিত করব।"}
         </p>
-        <h3 className="text-xl font-medium mb-1">2. Impact on Services:</h3>
-        <p className="mb-4">
+        <h3 className="text-xl font-medium mb-1">
+        {language === "en"
+            ? "2. Impact on Services:"
+            : "২. পরিষেবার উপর প্রভাব:"}
+          </h3>
+        <p className="mb-4">     
           Deleting your data may impact your ability to use certain services or
           features provided by Dear Lottery. For example, if you request the
           deletion of data necessary for account maintenance, you may no longer
