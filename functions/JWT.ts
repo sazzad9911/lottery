@@ -1,5 +1,4 @@
 import { SignJWT, jwtVerify } from 'jose'
-import userTypes from '@/types/userTypes'
 const secretKey = process.env.SECRET || "cluster0"
 const encodedKey = new TextEncoder().encode(secretKey)
 
