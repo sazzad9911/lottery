@@ -117,13 +117,16 @@ const DataDeletionPolicy = () => {
             ? "2. Impact on Services:"
             : "২. পরিষেবার উপর প্রভাব:"}
           </h3>
-        <p className="mb-4">     
-          Deleting your data may impact your ability to use certain services or
-          features provided by Dear Lottery. For example, if you request the
-          deletion of data necessary for account maintenance, you may no longer
-          be able to access your account or participate in lottery draws.
+        <p className="mb-4"> 
+        {language === "en"
+            ? "Deleting your data may impact your ability to use certain services or features provided by Dear Lottery. For example, if you request the deletion of data necessary for account maintenance, you may no longer be able to access your account or participate in lottery draws."
+            : "আপনার ডেটা মুছে ফেলার ফলে ডিয়ার লটারি দ্বারা প্রদত্ত নির্দিষ্ট পরিষেবা বা বৈশিষ্ট্যগুলি ব্যবহার করার আপনার ক্ষমতা প্রভাবিত হতে পারে। উদাহরণস্বরূপ, যদি আপনি অ্যাকাউন্ট রক্ষণাবেক্ষণের জন্য প্রয়োজনীয় ডেটা মুছে ফেলার অনুরোধ করেন, তাহলে আপনি আর আপনার অ্যাকাউন্ট অ্যাক্সেস করতে বা লটারি ড্রতে অংশগ্রহণ করতে পারবেন না।"}   
         </p>
-        <h3 className="text-xl font-medium mb-1">3. Backup Systems:</h3>
+        <h3 className="text-xl font-medium mb-1">
+        {language === "en"
+            ? "3. Backup Systems:"
+            : "৩. ব্যাকআপ সিস্টেম:"}           
+          </h3>
         <p>
           While we will delete your data from our active systems, some data may
           remain in our backup archives for a limited period. These backups are
