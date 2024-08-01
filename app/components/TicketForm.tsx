@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import Link from "next/link";
 import { useSelector } from "react-redux";
 import { RootState } from "../redux/store";
 
@@ -107,9 +108,11 @@ const TicketForm: React.FC = () => {
             {language ==="en"?"BDT":"বিডিটি"} 
           </span>
         </div>
+        <Link href="/pages/view-ticket">
         <button className="px-10  font-semibold bg-[#F9DC00] text-black py-2 rounded-md">
         {language ==="en"?"Buy":"ক্রয় করুন"} 
         </button>
+        </Link>
       </div>
     </div>
   );

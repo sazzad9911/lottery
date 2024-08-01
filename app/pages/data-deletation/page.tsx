@@ -128,10 +128,9 @@ const DataDeletionPolicy = () => {
             : "৩. ব্যাকআপ সিস্টেম:"}           
           </h3>
         <p>
-          While we will delete your data from our active systems, some data may
-          remain in our backup archives for a limited period. These backups are
-          not accessible for daily business operations and will be purged
-          according to our regular backup retention schedule.
+        {language === "en"
+            ? "While we will delete your data from our active systems, some data may remain in our backup archives for a limited period. These backups are not accessible for daily business operations and will be purged according to our regular backup retention schedule."
+            : "যদিও আমরা আমাদের সক্রিয় সিস্টেম থেকে আপনার ডেটা মুছে দেব, কিছু ডেটা সীমিত সময়ের জন্য আমাদের ব্যাকআপ সংরক্ষণাগারে থাকতে পারে। এই ব্যাকআপগুলি দৈনন্দিন ব্যবসায়িক ক্রিয়াকলাপের জন্য অ্যাক্সেসযোগ্য নয় এবং আমাদের নিয়মিত ব্যাকআপ ধরে রাখার সময়সূচী অনুসারে পরিষ্কার করা হবে।"} 
         </p>
       </section>
 
