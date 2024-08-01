@@ -19,24 +19,29 @@ function Page() {
         ></Image>
       </div>
 
-  <div className="max-w-md mx-auto">
-      <div className="mb-4 md:mb-6">
-        <label className="block  font-semibold">
-          {language === "en" ? "TICKET NUMBER" : "টিকেট নম্বর"}
-        </label>
-        <input
-          type="text"
-          className="mt-1 w-full px-3 py-2 rounded-md bg-[#D9D9D9] outline-[#D94F72]"
-          placeholder={
-            language === "en"
-              ? "Write your ticket number"
-              : "আপনার টিকিট নম্বর লিখুন"
-          }
-        />
-      </div>
-    </div>
+    <div className="px-2 md:px-8">
+      <div className="max-w-md mx-auto">
+        <div className="mb-4 md:mb-6">
+          <label className="block  font-semibold">
+            {language === "en" ? "TICKET NUMBER" : "টিকেট নম্বর"}
+          </label>
+          <input
+            type="text"
+            className="mt-1 w-full px-3 py-2 rounded-md bg-[#D9D9D9] outline-[#D94F72]"
+            placeholder={
+              language === "en"
+                ? "Write your ticket number"
+                : "আপনার টিকিট নম্বর লিখুন"
+            }
+          />
+        </div>
 
-    {/* <Ticket/> */}
+        <button className="px-10  font-semibold bg-[#F9DC00] text-black py-2 rounded-md">
+          {language === "en" ? "View" : "দেখুন"}
+        </button>
+      </div>
+      </div>
+      {/* <Ticket/> */}
     </div>
   );
 }
