@@ -1,6 +1,6 @@
 import { object, string, number, date, InferType, boolean } from 'yup';
 const eventSchema = object({
-    title: string().required().max(100, "Title is too long"),
+    title: string().required().max(28, "Title is too long"),
     description: string().required().max(500, "Description is too long"),
     image: string().required(),
     ticketOpenFrom: date().required(),
@@ -10,7 +10,7 @@ const eventSchema = object({
     live_link: string().required()
 })
 const eventUpdateSchema = object({
-    title: string().max(100, "Title is too long"),
+    title: string().max(28, "Title is too long"),
     description: string().max(500, "Description is too long"),
     image: string(),
     ticketOpenFrom: date(),
