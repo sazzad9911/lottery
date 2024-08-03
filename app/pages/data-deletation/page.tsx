@@ -136,7 +136,9 @@ const DataDeletionPolicy = () => {
 
       <section className="mb-6">
         <h2 className="text-2xl font-medium mb-2">
-          Data Protection and Privacy
+        {language === "en"
+            ? "Data Protection and Privacy"
+            : "ডেটা সুরক্ষা এবং গোপনীয়তা"}          
         </h2>
         <h3 className="text-xl font-medium mb-1">1. Security Measures:</h3>
         <p className="mb-4">
