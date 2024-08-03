@@ -69,7 +69,7 @@ export default function Banner() {
               </h1>
               <div>
                 <p className="font-semibold text-[18px] md:text-[28px] text-center">
-                  {language === "en" ? "৳ 6" : "৳ ৬"}
+                  {language === "en" ? "৳ 10" : "৳ ১০"}
                 </p>
                 <p className="font-semibold text-[18px] md:text-[28px] text-center font-sans">
                   {language === "en" ? "Ticket" : "টিকিট"}
@@ -125,7 +125,9 @@ export default function Banner() {
         <Modal size="xs" isCentered isOpen={isOpen} onClose={onClose}>
           <ModalOverlay />
           <ModalContent backgroundColor="#D94F72">
-            <ModalHeader color="white">Select a slot</ModalHeader>
+            <ModalHeader color="white">
+              {language === "en" ? "Select a slot" : "একটি স্লট নির্বাচন করুন"}            
+              </ModalHeader>
             <ModalCloseButton color="white" />
             <ModalBody>
               <RadioGroup
