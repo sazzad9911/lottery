@@ -31,7 +31,7 @@ const LotteryRules = () => {
             <li>
               {language === "en"
                 ? " Participants must be of legal age, usually 18 or older, to purchase lottery tickets."
-                : "লটারির টিকিট কেনার জন্য অংশগ্রহণকারীদের আইনি বয়স হতে হবে, সাধারণত 18 বা তার বেশি।"}
+                : "লটারির টিকিট কেনার জন্য অংশগ্রহণকারীদের আইনি বয়স হতে হবে, সাধারণত ১৮ বা তার বেশি।"}
             </li>
             <li>
               {language === "en"
@@ -108,7 +108,7 @@ const LotteryRules = () => {
             <li>
               {language === "en"
                 ? "Prizes must be claimed within a specified period, often ranging from 30 days to one year."
-                : "পুরস্কার একটি নির্দিষ্ট সময়ের মধ্যে দাবি করতে হবে, প্রায়ই 30 দিন থেকে এক বছরের মধ্যে।"}
+                : "পুরস্কার একটি নির্দিষ্ট সময়ের মধ্যে দাবি করতে হবে, প্রায়ই ৩০    দিন থেকে এক বছরের মধ্যে।"}
             </li>
             <li>
               {language === "en"

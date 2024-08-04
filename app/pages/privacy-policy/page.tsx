@@ -12,8 +12,8 @@ const PrivacyPolicy: React.FC = () => {
       </h1>
       <p className="mb-6">
         {language === "en"
-          ? "Welcome to our Privacy Policy page. At [Your Company Name], we value your privacy and are committed to protecting your personal information. This policy outlines how we collect, use, disclose, and safeguard your data when you visit our website or use our services. By accessing our website or services, you agree to the terms of this Privacy Policy."
-          : "আমাদের গোপনীয়তা নীতি পৃষ্ঠায় স্বাগতম। [ আপনার কোম্পানির নাম ] এ, আমরা আপনার গোপনীয়তাকে মূল্য দিই এবং আপনার ব্যক্তিগত তথ্য সুরক্ষিত রাখতে প্রতিশ্রুতিবদ্ধ। আপনি যখন আমাদের ওয়েবসাইট পরিদর্শন করেন বা আমাদের পরিষেবাগুলি ব্যবহার করেন তখন আমরা কীভাবে আপনার ডেটা সংগ্রহ করি, ব্যবহার করি, প্রকাশ করি এবং সুরক্ষিত করি এই নীতিটি রূপরেখা দেয়৷ আমাদের ওয়েবসাইট বা পরিষেবাগুলি অ্যাক্সেস করে, আপনি এই গোপনীয়তা নীতির শর্তাবলীতে সম্মত হন।"}
+          ? "Welcome to our Privacy Policy page. At Dear Lottery, we value your privacy and are committed to protecting your personal information. This policy outlines how we collect, use, disclose, and safeguard your data when you visit our website or use our services. By accessing our website or services, you agree to the terms of this Privacy Policy."
+          : "আমাদের গোপনীয়তা নীতি পৃষ্ঠায় স্বাগতম। ডিয়ার লটারিতে, আমরা আপনার গোপনীয়তাকে মূল্য দিই এবং আপনার ব্যক্তিগত তথ্য সুরক্ষিত রাখতে প্রতিশ্রুতিবদ্ধ। আপনি যখন আমাদের ওয়েবসাইট পরিদর্শন করেন বা আমাদের পরিষেবাগুলি ব্যবহার করেন তখন আমরা কীভাবে আপনার ডেটা সংগ্রহ করি, ব্যবহার করি, প্রকাশ করি এবং সুরক্ষিত করি এই নীতিটি রূপরেখা দেয়৷ আমাদের ওয়েবসাইট বা পরিষেবাগুলি অ্যাক্সেস করে, আপনি এই গোপনীয়তা নীতির শর্তাবলীতে সম্মত হন।"}
       </p>
 
       <section className="mb-6">
@@ -151,7 +151,7 @@ const PrivacyPolicy: React.FC = () => {
         <p className="mb-2">
           {language === "en"
             ? " We implement robust security measures to protect your personal information from unauthorized access, alteration, disclosure, or destruction. However, no method of transmission over the Internet or electronic storage is 100% secure. While we strive to use commercially acceptable means to protect your data, we cannot guarantee its absolute security."
-            : "অননুমোদিত অ্যাক্সেস, পরিবর্তন, প্রকাশ বা ধ্বংস থেকে আপনার ব্যক্তিগত তথ্য রক্ষা করার জন্য আমরা শক্তিশালী নিরাপত্তা ব্যবস্থা বাস্তবায়ন করি। যাইহোক, ইন্টারনেট বা ইলেকট্রনিক স্টোরেজের মাধ্যমে ট্রান্সমিশনের কোনো পদ্ধতিই 100% নিরাপদ নয়। যদিও আমরা আপনার ডেটা সুরক্ষিত করার জন্য বাণিজ্যিকভাবে গ্রহণযোগ্য উপায়গুলি ব্যবহার করার চেষ্টা করি, আমরা এর সম্পূর্ণ নিরাপত্তার নিশ্চয়তা দিতে পারি না ।"}
+            : "অননুমোদিত অ্যাক্সেস, পরিবর্তন, প্রকাশ বা ধ্বংস থেকে আপনার ব্যক্তিগত তথ্য রক্ষা করার জন্য আমরা শক্তিশালী নিরাপত্তা ব্যবস্থা বাস্তবায়ন করি। যাইহোক, ইন্টারনেট বা ইলেকট্রনিক স্টোরেজের মাধ্যমে ট্রান্সমিশনের কোনো পদ্ধতিই ১০০% নিরাপদ নয়। যদিও আমরা আপনার ডেটা সুরক্ষিত করার জন্য বাণিজ্যিকভাবে গ্রহণযোগ্য উপায়গুলি ব্যবহার করার চেষ্টা করি, আমরা এর সম্পূর্ণ নিরাপত্তার নিশ্চয়তা দিতে পারি না ।"}
         </p>
       </section>
 
