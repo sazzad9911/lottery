@@ -17,7 +17,7 @@ const PaginationPage: NextPage = () => {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 px-2 sm:px-5 ">
           <ResultPart></ResultPart>
           
-          <div className="lg:col-span-2 bg-[#8F8F8F] h-[250px] md:h-[400px] lg:h-[500px] flex justify-center items-center rounded"></div>
+          <div className="lg:col-span-2 bg-[#8F8F8F] h-[250px] md:h-[400px] lg:h-[500px] flex justify-center items-center rounded "></div>
           {/* <Paginations></Paginations> */}
         </div>
       </div>

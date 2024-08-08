@@ -15,7 +15,7 @@ const Paginations: NextPage = () => {
       <CssBaseline />
       <div style={{ padding: '20px' }}>
         <Stack spacing={2}>         
-          <Pagination count={10} color='secondary' shape="rounded" />
+          <Pagination count={10} variant='outlined' color='secondary' shape="rounded" />
         </Stack>
       </div>
     </ThemeProvider>
