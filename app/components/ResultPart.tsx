@@ -9,6 +9,7 @@ function ResultPart() {
       <Resultcard></Resultcard>
       <Resultcard></Resultcard>
       <Resultcard></Resultcard>
+      
     </div>
   );
 }
