@@ -31,7 +31,7 @@ function ComplainBox() {
             </div>
             <input
               type="text"
-              maxLength={25}
+              maxLength={30}
               placeholder={
                 language === "en" ? "Write your name" : "তোমার নাম লিখ"
               }

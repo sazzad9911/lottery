@@ -135,6 +135,7 @@ export default function Contact() {
             </div>
             <input
               type="text"
+              maxLength={30}
               placeholder={language ==="en"?"Name":"নাম"} 
               className="w-full p-3 bg-[#D9D9D9] outline-[#D94F72] rounded-md"
             />
@@ -158,6 +159,7 @@ export default function Contact() {
           {language ==="en"?"Message":"বার্তা"} 
             </label>
           <textarea
+            maxLength={150}
             placeholder={language ==="en"?"Describe your problems":"সমস্যাগুলি বর্ণনা করুন"}
             className="w-full p-5 bg-[#D9D9D9] outline-[#D94F72] rounded-md"
           ></textarea>
