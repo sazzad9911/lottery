@@ -41,8 +41,8 @@ const Pagination: React.FC<PaginationProps> = ({
         <div  
      
           className={`${currentPage === page ? 
-            "bg-[#A6FFB4] text-[#000000] text-[14px] sm:text-[16px] rounded flex justify-center items-center w-6 h-6 sm:w-8 sm:h-7 lg:w-10 lg:h-9 mt-0.5 lg:mt-1" : 
-            "w-6 h-6 sm:w-8 sm:h-7 lg:w-10 lg:h-9 mt-0.5 lg:mt-1 text-[14px] sm:text-[16px] text-[#000000] rounded border border-green-300 flex justify-center items-center" } cursor-pointer`}
+            "bg-[#D94F72] text-[#000000] text-[14px] sm:text-[16px] rounded flex justify-center items-center w-6 h-6 sm:w-8 sm:h-7 lg:w-10 lg:h-9 mt-0.5 lg:mt-1" : 
+            "w-6 h-6 sm:w-8 sm:h-7 lg:w-10 lg:h-9 mt-0.5 lg:mt-1 text-[14px] sm:text-[16px] text-[#000000] rounded border border-red-600 flex justify-center items-center" } cursor-pointer`}
           key={page} 
           onClick={() => onPageChange(page)}
                
