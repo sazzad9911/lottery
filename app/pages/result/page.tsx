@@ -4,6 +4,7 @@ import ResultPart from "@/app/components/ResultPart";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { useSelector } from "react-redux";
 import { RootState } from "@/app/redux/store";
+import PDFViewer from "@/app/components/PdfViewer";
 
 
 
@@ -27,7 +28,9 @@ const PaginationPage: NextPage = () => {
           onPageChange={(d) => setPage(d)}
           totalPages={5}
           /> */}
-          <div className="lg:col-span-2 bg-[#8F8F8F] h-[250px] md:h-[400px] lg:h-[500px] flex justify-center items-center rounded "></div>
+          <div className="lg:col-span-2 bg-[#8F8F8F] h-[250px] md:h-[400px] lg:h-[500px] flex justify-center items-center rounded ">
+            <PDFViewer fileUrl="/resume.pdf"/>
+          </div>
         </div>
       </div>
     </div>
