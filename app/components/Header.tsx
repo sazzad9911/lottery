@@ -14,6 +14,7 @@ import { AiOutlineAlignRight, AiOutlineClose } from "react-icons/ai";
 import LanguageToggle from "./LanguageToggle";
 import { useSelector } from "react-redux";
 import { RootState } from "../redux/store";
+import Image from "next/image";
 
 export default function Header() {
   const language = useSelector((state: RootState) => state.language.language);
@@ -60,8 +61,8 @@ export default function Header() {
       >
         <div className="flex justify-between items-center container px-2 md:px-8 w-full">
           <Link href="/">
-            <div className="flex gap-1 items-center ">
-              {language === "en" ? "logo" : "লোগো"}
+            <div className="flex gap-1 items-center bg-white rounded-full p-2">
+             <Image src={"/logo.png"} width={50} height={50} alt="logo"/>
               </div>
           </Link>
           <div className="lg:flex justify-end items-center gap-2 md:gap-4 lg:gap-10  hidden">

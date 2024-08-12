@@ -1,10 +1,12 @@
 "use client";
-import RecentSellTicketPart from "@/app/components/RecentSellTicketPart";
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { RootState } from "@/app/redux/store";
 import { getApi } from "@/functions/API";
 import Loader from "@/app/components/Loader";
+import NoData from "@/app/components/NoData";
+import TimeCounter from "@/app/components/TimeCounter";
+import SellTicketCard from "@/app/components/SellTicketCard";
 
 interface Root {
   id: string;
@@ -33,6 +35,14 @@ interface Ticket {
 export default function LiveDraw() {
   const language = useSelector((state: RootState) => state.language.language);
   const [data, setData] = useState<Root>();
+  const getYouTubeVideoId = (url: string): string | null => {
+    const regExp =
+      /^.*(youtu.be\/|v\/|embed\/|watch\?v=|watch\?.+&v=)([^#&?]*).*/;
+    const match = url.match(regExp);
+
+    return match && match[2].length === 11 ? match[2] : null;
+  };
+
   useEffect(() => {
     getApi("/api/live-draw")
       .then((res) => {
@@ -41,10 +51,10 @@ export default function LiveDraw() {
       .catch((err) => console.error(err));
   }, []);
   if (!data) {
-    return <Loader/>
+    return <Loader />;
   }
   if (!data.id) {
-    return <div>Upcoming Event not found!</div>;
+    return <NoData />;
   }
   return (
     <div className="container mx-auto px-2 md:px-8">
@@ -70,11 +80,9 @@ export default function LiveDraw() {
             </p>
           )}
           <p className="text-[16px] md:text-[20px] font-light text-black text-end">
-            {language === "en"
-              ? "End: "
-              : "শেষ: "}
-              {new Date(data.ticketCloseTo).toDateString()}{" "}
-              {new Date(data.ticketCloseTo).toLocaleTimeString()}
+            {language === "en" ? "End: " : "শেষ: "}
+            {new Date(data.ticketCloseTo).toDateString()}{" "}
+            {new Date(data.ticketCloseTo).toLocaleTimeString()}
           </p>
         </div>
       </div>
@@ -83,14 +91,14 @@ export default function LiveDraw() {
           ? "Live draw will start soon, Get ready to join the live for the current lottery"
           : "লাইভ ড্র শীঘ্রই শুরু হবে, বর্তমান লটারির জন্য লাইভে যোগ দিতে প্রস্তুত হন"}
       </p>
-      <p className="text-[16px] md:text-[20px] font-normal text-black py-4">
-        {language === "en"
-          ? "Time Reminding - 2D 1H 20M 20S"
-          : "আর বাকি-২দিন ১ঘণ্টা ২০সেকেন্ড"}
+      <p className="text-[16px] md:text-[20px] font-normal text-black py-4 flex">
+        {language === "en" ? "Time Reminding - " : "আর বাকি- "}
+        <TimeCounter targetDate={data.drawDate} />
       </p>
+
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
         <div className="lg:col-span-2 bg-[#8F8F8F] h-[250px] md:h-[400px] xl:h-[500px] flex justify-center items-center rounded">
-          <svg
+          {/* <svg
             className=" h-[50px] md:h-[100px] xl:h-[180px] cursor-pointer hover:scale-105 duration-300"
             viewBox="0 0 188 188"
             fill="none"
@@ -107,7 +115,18 @@ export default function LiveDraw() {
               d="M120.741 102.296L83.7657 124.126C77.8141 127.64 70.5 123.066 70.5 115.83V72.1698C70.5 64.9343 77.8141 60.3607 83.7657 63.8746L120.741 85.7046C126.864 89.3204 126.864 98.6797 120.741 102.296Z"
               fill="#FF3742"
             />
-          </svg>
+          </svg> */}
+          <iframe
+            className="w-full h-full"
+            src={`https://www.youtube.com/embed/${getYouTubeVideoId(
+              data.live_link
+            )}`}
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+          ></iframe>
         </div>
         <div className="lg:col-span-1 ">
           <p className="text-[16px] md:text-[20px] font-normal text-black pb-4">
@@ -115,7 +134,11 @@ export default function LiveDraw() {
               ? "Recent Sell Tickets"
               : "সাম্প্রতিক বিক্রি টিকিট"}
           </p>
-          <RecentSellTicketPart></RecentSellTicketPart>
+          <div className="space-y-2 max-h-[500px] lg:h-[350px] xl:h-[450px] overflow-y-auto scrollbar-custom">
+            {data.tickets?.map((doc,i)=>(
+              <SellTicketCard date={doc.date} number={doc.ticket_number.toString()} title={data.title} key={i}/>
+            ))}
+          </div>
         </div>
       </div>
     </div>
