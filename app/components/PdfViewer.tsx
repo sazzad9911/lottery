@@ -20,13 +20,13 @@ const PDFViewer: React.FC<PDFViewerProps> = ({ fileUrl }) => {
     const pdf: pdfjs.PDFDocumentProxy = e.doc;
     setNumPages(pdf.numPages);
   };
-//   return (
-//     <Viewer
-//       fileUrl={fileUrl}
-//       plugins={[defaultLayoutPluginInstance]}
-//       onDocumentLoad={onDocumentLoad}
-//     />
-//   );
+  //   return (
+  //     <Viewer
+  //       fileUrl={fileUrl}
+  //       plugins={[defaultLayoutPluginInstance]}
+  //       onDocumentLoad={onDocumentLoad}
+  //     />
+  //   );
 
   return (
     <div className="w-full h-full">

@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { RootState } from "@/app/redux/store";
 import { getApi } from "@/functions/API";
+import Loader from "@/app/components/Loader";
 
 interface Root {
   id: string;
@@ -40,7 +41,7 @@ export default function LiveDraw() {
       .catch((err) => console.error(err));
   }, []);
   if (!data) {
-    return <div>Loading...</div>;
+    return <Loader/>
   }
   if (!data.id) {
     return <div>Upcoming Event not found!</div>;

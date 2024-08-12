@@ -9,7 +9,6 @@ import { MdPrint } from "react-icons/md";
 import { BsArrowsFullscreen } from "react-icons/bs";
 import { IoMdDownload } from "react-icons/io";
 
-
 function Page() {
   const language = useSelector((state: RootState) => state.language.language);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -46,7 +45,6 @@ function Page() {
 
         // Trigger the print dialog
         printWindow.print();
-        
       }
     }
   };
@@ -97,14 +95,29 @@ function Page() {
           </button>
         </div>
       </div>
-      <div  className="w-full flex flex-col items-center ">
+      <div className="w-full flex flex-col items-center ">
         <div className="flex gap-4 w-full bg-blue-300 justify-center py-1 my-4">
-          <MdPrint onClick={handlePrint} className="hover:text-red-700" size={30} />
-          <BsArrowsFullscreen onClick={handleFullscreen} className="hover:text-red-700" size={30} />
-          <IoMdDownload onClick={handlePrint} className="hover:text-red-700" size={30} />
+          <MdPrint
+            onClick={handlePrint}
+            className="hover:text-red-700"
+            size={30}
+          />
+          <BsArrowsFullscreen
+            onClick={handleFullscreen}
+            className="hover:text-red-700"
+            size={30}
+          />
+          <IoMdDownload
+            onClick={handlePrint}
+            className="hover:text-red-700"
+            size={30}
+          />
         </div>
       </div>
-      <div ref={printableAreaRef} className="h-[500px] overflow-y-scroll w-[calc(100%-60px)] mx-[30px] ">
+      <div
+        ref={printableAreaRef}
+        className="h-[500px] overflow-y-scroll w-[calc(100%-60px)] mx-[30px] "
+      >
         <div ref={contentRef} id="printable-area" className="bg-slate-200">
           {[2, 3, 4, 5].map((imageUrl, index) => (
             <Ticket
