@@ -63,7 +63,7 @@ const viewTickets = async (request: NextRequest) => {
     const ticket = request.nextUrl.searchParams.get("tickets") as string;
     if (!ticket) return NextResponse.json({ error: "Give tickets" }, { status: 404 })
     try {
-        const ticketNumbers = ticket.split("&" || "%")
+        const ticketNumbers = ticket.split(/&|%/);
         console.log(ticketNumbers)
         const result = await Promise.all(ticketNumbers.map(async (tick) => {
             const tickets = await prisma.tickets.findUnique({

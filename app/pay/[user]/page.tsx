@@ -3,8 +3,7 @@ import { getApi, postApi, putApi } from "@/functions/API";
 import { useRouter, useSearchParams } from "next/navigation";
 import React, { FormEvent, useEffect, useState } from "react";
 import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import { ToastContainer } from "react-toastify";
+
 
 export default function Pay({ params }: { params: { user: string } }) {
   const searchParams = useSearchParams();
@@ -102,7 +101,7 @@ export default function Pay({ params }: { params: { user: string } }) {
   }
   return (
     <div className="h-screen w-screen text-white flex justify-center items-center top-0 left-0  px-5 py-3 absolute z-50 bg-white">
-      <div className="max-w-[500px] min-h-[calc(100vh-100px)] overflow-y-scroll bg-[#2E4053] px-4 py-2 rounded-md">
+      <div className="max-w-[500px] min-h-[calc(100vh-100px)] overflow-y-scroll bg-[#2e091b] px-4 py-2 rounded-md">
         <p className="text-center text-3xl py-5">Online-Pay</p>
         <p className="text-center">
           Online pay is a online payment system for transaction money via mobile
@@ -151,18 +150,6 @@ export default function Pay({ params }: { params: { user: string } }) {
         </button>
       </div>
 
-      <ToastContainer
-        position="top-center"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="light"
-      />
     </div>
   );
 }
