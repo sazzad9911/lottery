@@ -22,6 +22,20 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import { useRouter } from "next/navigation";
+import { getApi } from "@/functions/API";
+
+interface Root {
+  id: string;
+  title: string;
+  description: string;
+  image: string;
+  ticketOpenFrom: string;
+  ticketCloseTo: string;
+  drawDate: string;
+  date: string;
+  ticketPrice: number;
+  live_link: string;
+}
 
 export default function Banner() {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -31,6 +45,7 @@ export default function Banner() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [loaded, setLoaded] = useState(false);
   const route = useRouter();
+  const [data, setData] = useState<Root[]>();
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
@@ -38,6 +53,13 @@ export default function Banner() {
 
     return () => clearInterval(intervalId);
   }, [currentImageIndex]);
+  useEffect(() => {
+    getApi("/api/buy-ticket")
+      .then((res) => {
+        setData(res.data);
+      })
+      .catch((err) => console.log(err));
+  }, []);
 
   const handleLoad = () => {
     setLoaded(true);
@@ -126,8 +148,8 @@ export default function Banner() {
           <ModalOverlay />
           <ModalContent backgroundColor="#D94F72">
             <ModalHeader color="white">
-              {language === "en" ? "Select a slot" : "একটি স্লট নির্বাচন করুন"}            
-              </ModalHeader>
+              {language === "en" ? "Select a slot" : "একটি স্লট নির্বাচন করুন"}
+            </ModalHeader>
             <ModalCloseButton color="white" />
             <ModalBody>
               <RadioGroup
@@ -136,15 +158,12 @@ export default function Banner() {
                 value={value}
               >
                 <Stack gap={6} direction="column">
-                  <Radio  value="uddokta1">
-                    <Text color="white"> uddokta1</Text>
-                  </Radio>
-                  <Radio value="uddokta2">
-                    <Text color="white"> uddokta2</Text>
-                  </Radio>
-                  <Radio value="uddokta3">
-                    <Text color="white"> uddokta3</Text>
-                  </Radio>
+                  {data?.map((doc, i) => (
+                    <Radio key={i} value={doc.id}>
+                      <Text color="white"> {doc.title}</Text>
+                    </Radio>
+                  ))}
+
                 </Stack>
               </RadioGroup>
             </ModalBody>
