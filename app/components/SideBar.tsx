@@ -48,10 +48,10 @@ export default function SideBar() {
             
               <li
                 className={` flex items-center px-5 py-1 rounded-md hover:text-white ${
-                  pathname === "/user/member" && "text-[#349407]"
+                  pathname === "" && "text-[#349407]"
                 }`}
               >
-                <Link href="/user/member" className=" flex gap-2 ">
+                <Link href="" className=" flex gap-2 ">
                 <svg
                       width="30"
                       height="30"
@@ -71,11 +71,11 @@ export default function SideBar() {
 
            <li
               className={` flex items-center px-5 py-1 rounded-md hover:text-white ${
-                (pathname === "/user/plan" && "text-[#349407]") ||
-                (pathname === "/user/invest" && "text-[#349407]")
+                (pathname === "" && "text-[#349407]") ||
+                (pathname === "" && "text-[#349407]")
               }`}
              >
-              <Link href="/user/plan" className=" flex gap-2 ">
+              <Link href="" className=" flex gap-2 ">
               <svg
                       width="30"
                       height="30"
@@ -135,10 +135,10 @@ export default function SideBar() {
             {/* {userData?.isAdmin && userData.isAgent && ( */}
               <li
                 className={` flex items-center px-5 py-1 rounded-md hover:text-white ${
-                   pathname === "/user/withdraw-request" && "text-[#349407]"
+                   pathname === "/user/withdraws" && "text-[#349407]"
                 }`}
               >
-                <Link href="/user/withdraw-request" className=" flex gap-2 ">
+                <Link href="/user/withdraws" className=" flex gap-2 ">
                 <svg
                       width="30"
                       height="30"
