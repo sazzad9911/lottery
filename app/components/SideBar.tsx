@@ -14,7 +14,7 @@ export default function SideBar() {
           <ul className=" space-y-4">
             <li
               className={` flex items-center px-5 py-1 rounded-md hover:text-white ${
-                pathname === "/user" && "text-[#349407]"
+                pathname === "/user" && "text-[#D94F72]"
               }`}
             >
               <Link href="/user" className=" flex gap-2 ">

@@ -21,7 +21,7 @@ export default function UserHeader() {
       style={{
         backgroundColor: isOpen ? "#D94F72" : "#D94F72",
       }}
-      className="h-[60px]  p-2"
+      className="h-[60px] p-1"
     >
       <div className="container mx-auto flex justify-between items-center">
         <div className="md:flex">
