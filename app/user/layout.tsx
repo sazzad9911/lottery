@@ -4,24 +4,6 @@ import UserHeader from '@/app/components/UserHeader';
 import SideBar from '@/app/components/SideBar';
 import Card from '@/app/components/Card';
 
-// function layout() {
-//   return (
-//     <div>
-//     <div className='h-screen w-screen'>
-//       <UserHeader></UserHeader>
-//       <SideBar></SideBar>
-//       <Card></Card>
-//       </div>
-//       <div>
-
-//     </div>
-//     </div>
-
-//   )
-// }
-
-// export default layout
-
 export default function DashboardLayout({
   children,
 }: {

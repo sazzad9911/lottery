@@ -23,7 +23,7 @@ export default function UserHeader() {
       }}
       className="h-[60px] p-1"
     >
-      <div className="container mx-auto flex justify-between items-center">
+      <div className="mx-5 sm:mx-8 lg:mx-14 flex justify-between items-center">
         <div className="md:flex">
           <Link
             href="/"

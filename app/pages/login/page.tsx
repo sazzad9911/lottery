@@ -73,16 +73,18 @@ export default function Login() {
              {language === "en" ? "Forgot Password?":"পাসওয়ার্ড ভুলে গেছেন?"}  
             </Link>
           </div>
+          <Link href="/user">
           <button
             type="submit"
             className="w-full bg-[#F9DC00] text-black py-2 rounded-md font-semibold hover:scale-105 duration-300"
           >
             {language === "en" ? "Log In" : "লগ ইন"}
           </button>
+          </Link>
         </form>
         <div className="mt-4 text-end">
           <Link
-            href="/pages/sign-up"
+            href="/user"
             className="text-[#F9DC00] hover:underline"
           >
             {language === "en" ? "Create New Account?" : "নতুন অ্যাকাউন্ট তৈরি করুন?"}

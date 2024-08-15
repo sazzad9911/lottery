@@ -48,10 +48,10 @@ export default function SideBar() {
             
               <li
                 className={` flex items-center px-5 py-1 rounded-md hover:text-white ${
-                  pathname === "" && "text-[#349407]"
+                  pathname === "/user/sells" && "text-[#349407]"
                 }`}
               >
-                <Link href="" className=" flex gap-2 ">
+                <Link href="/user/sells" className=" flex gap-2 ">
                 <svg
                       width="30"
                       height="30"
