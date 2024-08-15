@@ -7,6 +7,8 @@ import { ChakraProvider } from "@chakra-ui/react";
 import { useEffect } from "react";
 import { setLanguage } from "@/app/redux/features/languageSlice";
 import { usePathname } from "next/navigation";
+import { Suspense } from 'react';
+import Loader from "../Loader";
 
 export default function MainLayout({
   children, // will be a page or nested layout
@@ -33,6 +35,7 @@ export default function MainLayout({
   }
   return (
     <section>
+      <Suspense fallback={<Loader/>}>
       <ChakraProvider>
         <Provider store={store}>
           <Header></Header>
@@ -40,6 +43,7 @@ export default function MainLayout({
           <Footer></Footer>
         </Provider>
       </ChakraProvider>
+      </Suspense>
     </section>
   );
 }
