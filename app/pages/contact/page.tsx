@@ -1,13 +1,54 @@
 "use client";
-import React from "react";
+import React, { FormEvent, useState } from "react";
 import { useSelector } from "react-redux";
 import { RootState } from "@/app/redux/store";
-
+import { postApi } from "@/functions/API";
+import { toast } from "react-toastify";
+type InputProps = {
+  target: {
+    name: string;
+    value: string;
+  };
+};
 export default function Contact() {
   const language = useSelector((state: RootState) => state.language.language);
+  const [formData,setFormData]=useState({
+    name:"",
+    email:"",
+    message:""
+  })
+  const handleInputChange = (e: InputProps) => {
+    const { name, value } = e.target;
+
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      [name]: value,
+    }));
+  };
+  const onSubmit = async (e: FormEvent) => {
+    e.preventDefault();
+    const id = toast.loading("Loading...");
+    try {
+      await postApi("/api/complain", {
+        
+      });
+      toast.update(id, {
+        render: "Successful",
+        type: "success",
+        isLoading: false,
+      });
+      window.location.reload()
+    } catch (error: any) {
+      toast.update(id, {
+        render: error.response.data.error,
+        type: "error",
+        isLoading: false,
+      });
+    }
+  };
   return (
   <div className="grid justify-items-center">
-    <div className="w-full max-w-5xl px-2 md:px-8 ">
+    <form onSubmit={onSubmit}  className="w-full max-w-5xl px-2 md:px-8 ">
       <h1 className="text-center text-2xl lg:text-4xl mb-10 mt-5 text-[#000000] font-bold">
         {language === "en" ? "Contact Us" : "যোগাযোগ করুন"}
       </h1> 
@@ -133,7 +174,7 @@ export default function Contact() {
                 {language ==="en"?"Name":"নাম"}
                 </label>
             </div>
-            <input
+            <input name="name"
               type="text"
               maxLength={30}
               placeholder={language ==="en"?"Name":"নাম"} 
@@ -172,7 +213,7 @@ export default function Contact() {
             className="btn bg-[#D94F72] text-[#FFFFFF] px-8 py-2 rounded-md"
           />
         </div>
-    </div>
+    </form>
   </div>
   );
 }

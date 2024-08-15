@@ -166,6 +166,7 @@ export default function Banner() {
 
                 </Stack>
               </RadioGroup>
+              {!data&&(<div className="text-white">Loading...</div>)}
             </ModalBody>
           </ModalContent>
         </Modal>

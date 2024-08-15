@@ -1,12 +1,14 @@
 import { configureStore } from "@reduxjs/toolkit";
 import languageReducer from "./features/languageSlice";
 import dataReducer from "./features/dataSlice";
+import liveEventsReducer from "./features/liveEventsSlice";
 import { baseApi } from "./api/baseApi";
 export const store = configureStore({
   reducer: {
     [baseApi.reducerPath]:baseApi.reducer,
     data: dataReducer,
     language: languageReducer,
+    liveEvents:liveEventsReducer
   },
   middleware:(getdefaultMiddlewares)=>getdefaultMiddlewares().concat(baseApi.middleware)
 });
