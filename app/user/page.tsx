@@ -41,31 +41,31 @@ export default function Page() {
      className="w-full h-auto"
     />
   </div>
-  <p className="text-[#000000] text-[20px] pl-5 lg:pl-14 mb-3">Sell Statistics</p>
+  <p className="text-[#000000] text-[20px] pl-5 lg:pl-14 mb-3">Recent Sell</p>
 <div className="mx-5 sm:mx-8 lg:mx-14 mb-10">
   <table className="border-collapse border w-full">
-  <thead>
+  <thead className="text-left">
     <tr>
-      <th className="border border-slate-600  bg-[#CBD5E1] ">Ticket Number</th>
-      <th className="border border-slate-600 bg-[#CBD5E1] ">Phone Number</th>
-      <th className="border border-slate-600 bg-[#CBD5E1] ">Date</th>
+      <th className="border border-slate-600 bg-[#CBD5E1] p-2 ">Ticket Number</th>
+      <th className="border border-slate-600 bg-[#CBD5E1] p-2">Phone Number</th>
+      <th className="border border-slate-600 bg-[#CBD5E1] p-2">Date</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td className="border border-slate-600 bg-[#FFEAEA]">123456</td>
-      <td className="border border-slate-600 bg-[#FFEAEA]">12345678910</td>
-      <td className="border border-slate-600 bg-[#FFEAEA]">12 jun 2024</td>
+      <td className="border border-slate-600 bg-[#FFEAEA] p-2">123456</td>
+      <td className="border border-slate-600 bg-[#FFEAEA] p-2">12345678910</td>
+      <td className="border border-slate-600 bg-[#FFEAEA] p-2">12 jun 2024</td>
     </tr>
     <tr>
-      <td className="border border-slate-600 bg-[#FFEAEA]">123456</td>
-      <td className="border border-slate-600 bg-[#FFEAEA]">12345678910</td>
-      <td className="border border-slate-600 bg-[#FFEAEA]">12 jun 2024</td>
+      <td className="border border-slate-600 bg-[#FFEAEA] p-2">123456</td>
+      <td className="border border-slate-600 bg-[#FFEAEA] p-2">12345678910</td>
+      <td className="border border-slate-600 bg-[#FFEAEA] p-2">12 jun 2024</td>
     </tr>
     <tr>
-      <td className="border border-slate-600 bg-[#FFEAEA]">123456</td>
-      <td className="border border-slate-600 bg-[#FFEAEA]">12345678910</td>
-      <td className="border border-slate-600 bg-[#FFEAEA]">12 jun 2024</td>
+      <td className="border border-slate-600 bg-[#FFEAEA] p-2">123456</td>
+      <td className="border border-slate-600 bg-[#FFEAEA] p-2">12345678910</td>
+      <td className="border border-slate-600 bg-[#FFEAEA] p-2">12 jun 2024</td>
     </tr>
   </tbody>
 </table>
