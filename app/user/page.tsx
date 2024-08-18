@@ -34,9 +34,8 @@ export default function Page() {
   </div>
   
     <p className="text-[#000000] text-[20px] mt-5 ml-5 lg:ml-14">Sell Statistics</p>
-
     <div className="mx-8 lg:mx-14">
-    <img src="../images/chart.png" 
+    <img src="../images/chart-imge.png" 
      alt="img"
      className="w-full h-auto"
     />

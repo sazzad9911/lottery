@@ -71,11 +71,11 @@ export default function SideBar() {
 
            <li
               className={` flex items-center px-5 py-1 rounded-md hover:text-white ${
-                (pathname === "" && "text-[#349407]") ||
+                // (pathname === "" && "text-[#349407]") ||
                 (pathname === "" && "text-[#349407]")
               }`}
              >
-              <Link href="" className=" flex gap-2 ">
+              <Link href="/user/results" className=" flex gap-2 ">
               <svg
                       width="30"
                       height="30"
@@ -158,6 +158,31 @@ export default function SideBar() {
                       />
                     </svg>
                   <span className="">Withdraws</span>
+                </Link>
+              </li>
+
+              <li
+                className={` flex items-center px-5 py-1 rounded-md  ${
+                   pathname === "/user" && "text-[#349407]"
+                }`}
+              >
+                <Link href="/user" className=" flex gap-2 ">
+                <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="30"
+                      height="30"
+                      viewBox="0 0 23 22"
+                      fill="none"
+                    >
+                      <path
+                        d="M13 9.25V5.5C13 4.30653 13.4741 3.16193 14.318 2.31802C15.1619 1.47411 16.3065 1 17.5 1C18.6935 1 19.8381 1.47411 20.682 2.31802C21.5259 3.16193 22 4.30653 22 5.5V9.25M3.25 20.5H13.75C14.3467 20.5 14.919 20.2629 15.341 19.841C15.7629 19.419 16 18.8467 16 18.25V11.5C16 10.9033 15.7629 10.331 15.341 9.90901C14.919 9.48705 14.3467 9.25 13.75 9.25H3.25C2.65326 9.25 2.08097 9.48705 1.65901 9.90901C1.23705 10.331 1 10.9033 1 11.5V18.25C1 18.8467 1.23705 19.419 1.65901 19.841C2.08097 20.2629 2.65326 20.5 3.25 20.5Z"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  <span className="hover:text-white">Logout</span>
                 </Link>
               </li>
             {/* )} */}          
