@@ -40,12 +40,14 @@ export default function SignUp() {
               required
             />
           </div>
+          <Link href="/pages/verify-otp">
           <button
             type="submit"
             className="w-full bg-[#F9DC00] text-black py-2 rounded-md font-semibold hover:scale-105 duration-300"
           >
            {language==="en"?"Next":"পরবর্তী"} 
           </button>
+          </Link>
         </form>
         <div className="mt-4 text-end">
           <Link href="/pages/login" className="text-[#F9DC00] hover:underline">

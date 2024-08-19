@@ -84,7 +84,7 @@ export default function Login() {
         </form>
         <div className="mt-4 text-end">
           <Link
-            href="/user"
+            href="/pages/sign-up"
             className="text-[#F9DC00] hover:underline"
           >
             {language === "en" ? "Create New Account?" : "নতুন অ্যাকাউন্ট তৈরি করুন?"}
