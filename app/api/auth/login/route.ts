@@ -5,6 +5,7 @@ import jwt from "jsonwebtoken"
 import getUser from "@/functions/getUser";
 import { encrypt } from "@/functions/JWT";
 import prisma from "@/utils/prisma";
+import errorMessage from "@/validations/errorMessage";
 const secret = process.env.SECRET || "cluster0"
 
 interface loginTypes {
@@ -41,5 +42,18 @@ const POST = async (request: NextRequest) => {
     }
 
 }
+const checkUsername = async (request: NextRequest) => {
+    const username = request.nextUrl.searchParams.get('username') || "";
+    try {
+        const user = await prisma.users.findUnique({
+            where: {
+                username: username
+            }
+        })
+        return NextResponse.json(user)
+    } catch (error) {
+        return errorMessage(error, null)
+    }
+}
 
-export { POST }
+export { POST, checkUsername as GET }

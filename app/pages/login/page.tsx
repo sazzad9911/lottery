@@ -1,24 +1,51 @@
 "use client";
 import { RootState } from "@/app/redux/store";
+import { postApi } from "@/functions/API";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
+import { toast } from "react-toastify";
 
 export default function Login() {
   const language = useSelector((state: RootState) => state.language.language);
   const [mobileNumber, setMobileNumber] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const router = useRouter();
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
 
-  const handleLogin = (e: React.FormEvent) => {
+  const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle login logic here
-    console.log("Mobile Number:", mobileNumber);
-    console.log("Password:", password);
+
+    const id = toast.loading("Loading...");
+    try {
+      const res = await postApi("/api/auth/login", {
+        password: password,
+        phone: `+88${mobileNumber}`,
+      });
+      //console.log(res.data);
+      localStorage.setItem("user", JSON.stringify(res.data));
+      router.replace("/user");
+      toast.update(id, {
+        render: "Successful",
+        type: "success",
+        isLoading: false,
+      });
+    } catch (error: any) {
+      toast.update(id, {
+        render: error.response.data.error,
+        type: "error",
+        isLoading: false,
+      });
+    } finally {
+      setTimeout(() => {
+        toast.dismiss(id);
+      }, 3000);
+    }
   };
   return (
     <div className="flex items-center justify-center min-h-screen">
@@ -34,12 +61,14 @@ export default function Login() {
         <form onSubmit={handleLogin}>
           <div className="mb-4">
             <label className="block mb-1 ">
-            {language === "en" ? "Mobile Number" : "মোবাইল নম্বর"}
-              </label>
+              {language === "en" ? "Mobile Number" : "মোবাইল নম্বর"}
+            </label>
             <input
               type="text"
               className="w-full px-3 py-2 bg-[#D9D9D9] rounded-md text-black outline-[#D94F72]"
-              placeholder={language === "en" ? "Write your number" : "আপনার নম্বর লিখুন"}
+              placeholder={
+                language === "en" ? "Write your number" : "আপনার নম্বর লিখুন"
+              }
               value={mobileNumber}
               onChange={(e) => setMobileNumber(e.target.value)}
               required
@@ -47,12 +76,14 @@ export default function Login() {
           </div>
           <div className="mb-1 relative">
             <label className="block mb-1">
-            {language === "en" ? "Password" : "পাসওয়ার্ড"} 
-              </label>
+              {language === "en" ? "Password" : "পাসওয়ার্ড"}
+            </label>
             <input
               type={showPassword ? "text" : "password"}
               className="w-full px-3 py-2 bg-[#D9D9D9] rounded-md text-black outline-[#D94F72]"
-              placeholder={language === "en" ? "Give password" : "পাসওয়ার্ড দিন"} 
+              placeholder={
+                language === "en" ? "Give password" : "পাসওয়ার্ড দিন"
+              }
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
@@ -70,24 +101,28 @@ export default function Login() {
               href="/pages/forgot-password"
               className="text-[#F9DC00] hover:underline"
             >
-             {language === "en" ? "Forgot Password?":"পাসওয়ার্ড ভুলে গেছেন?"}  
+              {language === "en"
+                ? "Forgot Password?"
+                : "পাসওয়ার্ড ভুলে গেছেন?"}
             </Link>
           </div>
-          <Link href="/user">
-          <button
-            type="submit"
-            className="w-full bg-[#F9DC00] text-black py-2 rounded-md font-semibold hover:scale-105 duration-300"
-          >
-            {language === "en" ? "Log In" : "লগ ইন"}
-          </button>
-          </Link>
+         
+            <button
+              type="submit"
+              className="w-full bg-[#F9DC00] text-black py-2 rounded-md font-semibold hover:scale-105 duration-300"
+            >
+              {language === "en" ? "Log In" : "লগ ইন"}
+            </button>
+        
         </form>
         <div className="mt-4 text-end">
           <Link
-            href="/user"
+            href="/pages/sign-up"
             className="text-[#F9DC00] hover:underline"
           >
-            {language === "en" ? "Create New Account?" : "নতুন অ্যাকাউন্ট তৈরি করুন?"}
+            {language === "en"
+              ? "Create New Account?"
+              : "নতুন অ্যাকাউন্ট তৈরি করুন?"}
           </Link>
         </div>
       </div>

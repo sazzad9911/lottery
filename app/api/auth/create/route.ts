@@ -117,7 +117,7 @@ const POST = async (request: NextRequest) => {
                 name: data.name,
                 phone: number,
                 password: encryptedPassword,
-                username: data.username
+                username:data.username
             }
         })
         const userToken = await encrypt(user.id.toString(), secret)

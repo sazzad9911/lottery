@@ -53,13 +53,17 @@ function ComplainBox() {
         type: "success",
         isLoading: false,
       });
-      window.location.reload()
+      window.location.reload();
     } catch (error: any) {
       toast.update(id, {
         render: error.response.data.error,
         type: "error",
         isLoading: false,
       });
+    } finally {
+      setTimeout(() => {
+        toast.dismiss(id);
+      }, 3000);
     }
   };
 
