@@ -237,10 +237,10 @@ export default function UserHeader() {
                     setIsOpen(false);
                   }}
                   className={` flex items-center px-5 py-1 rounded-md ${
-                    pathname === "/user/member" && "text-[#349407]"
+                    pathname === "/user/sells" && "text-[#349407]"
                   }`}
                 >
-                  <Link href="/user/member" className=" flex gap-2 ">
+                  <Link href="/user/sells" className=" flex gap-2 ">
                     <svg
                       width="30"
                       height="30"
@@ -264,11 +264,11 @@ export default function UserHeader() {
                     setIsOpen(false);
                   }}
                   className={` flex items-center px-5 py-1 rounded-md ${
-                    (pathname === "/user/plan" && "text-[#349407]") ||
+                    (pathname === "/user/results" && "text-[#349407]") ||
                     (pathname === "/user/invest" && "text-[#349407]")
                   }`}
                 >
-                  <Link href="/user/plan" className=" flex gap-2 ">
+                  <Link href="/user/results" className=" flex gap-2 ">
                     <svg
                       width="30"
                       height="30"
@@ -393,34 +393,6 @@ export default function UserHeader() {
                   onClick={() => {
                     setIsOpen(false);
                   }}
-                  className={` flex items-center px-5 py-1 rounded-md ${
-                    pathname === "/user/account" && "text-[#349407]"
-                  }`}
-                >
-                  <Link href="/user/account" className=" flex gap-2 ">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                    >
-                      <path
-                        d="M7.21669 10.9073C6.97455 10.4716 6.59459 10.1286 6.13646 9.93227C5.67832 9.73589 5.16794 9.69719 4.68544 9.82226C4.20293 9.94733 3.77562 10.2291 3.47057 10.6233C3.16552 11.0175 3 11.5018 3 12.0003C3 12.4987 3.16552 12.9831 3.47057 13.3773C3.77562 13.7715 4.20293 14.0532 4.68544 14.1783C5.16794 14.3034 5.67832 14.2647 6.13646 14.0683C6.59459 13.8719 6.97455 13.529 7.21669 13.0933M7.21669 10.9073C7.39669 11.2313 7.49969 11.6033 7.49969 12.0003C7.49969 12.3973 7.39669 12.7703 7.21669 13.0933M7.21669 10.9073L16.7827 5.59328M7.21669 13.0933L16.7827 18.4073M16.7827 5.59328C16.9229 5.85742 17.1144 6.09095 17.346 6.28021C17.5776 6.46947 17.8445 6.61068 18.1313 6.69556C18.4181 6.78044 18.7189 6.80731 19.0161 6.77458C19.3134 6.74185 19.6012 6.65018 19.8626 6.50494C20.124 6.35971 20.3539 6.1638 20.5387 5.9287C20.7236 5.69359 20.8597 5.42399 20.9391 5.13567C21.0185 4.84734 21.0397 4.54607 21.0013 4.24948C20.963 3.95288 20.8659 3.66691 20.7157 3.40828C20.4198 2.89862 19.9357 2.52542 19.3675 2.3689C18.7993 2.21237 18.1924 2.28503 17.6772 2.57124C17.162 2.85745 16.7797 3.33437 16.6124 3.89948C16.4452 4.46459 16.5063 5.07277 16.7827 5.59328ZM16.7827 18.4073C16.6392 18.6657 16.5479 18.9498 16.5142 19.2434C16.4804 19.537 16.5049 19.8345 16.5861 20.1186C16.6673 20.4028 16.8037 20.6683 16.9875 20.8997C17.1712 21.1312 17.3988 21.3242 17.6572 21.4678C17.9156 21.6113 18.1997 21.7026 18.4933 21.7363C18.787 21.77 19.0844 21.7456 19.3685 21.6644C19.6527 21.5832 19.9182 21.4468 20.1496 21.263C20.3811 21.0792 20.5742 20.8517 20.7177 20.5933C21.0076 20.0715 21.0783 19.4559 20.9143 18.8819C20.7503 18.308 20.365 17.8227 19.8432 17.5328C19.3214 17.2429 18.7058 17.1722 18.1318 17.3362C17.5579 17.5002 17.0726 17.8855 16.7827 18.4073Z"
-                        stroke="currentColor"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                    <span className="hover:text-red-500">Account Share</span>
-                  </Link>
-                </li> */}
-
-                {/* <li
-                  onClick={() => {
-                    setIsOpen(false);
-                  }}
                   className={` flex items-center px-5 py-1 rounded-md  ${
                     pathname === "/user/add-bank" && "text-[#349407]"
                   }`}
@@ -445,19 +417,16 @@ export default function UserHeader() {
                   </Link>
                 </li> */}
 
-                <li
-                  onClick={() => {
-                    setIsOpen(false);
-                  }}
-                  className={` cursor-pointer flex items-center px-5 py-1 pb-5 rounded-md text-[#60a5fa] ${
-                    pathname === "" && "text-[#349407]"
-                  }`}
-                >
-                  <div onClick={logOut} className=" flex gap-2">
-                    <svg
+            <li
+                className={` flex items-center px-5 py-1 rounded-md ${
+                   pathname === "/user" && "text-[#349407]"
+                }`}
+              >
+                <Link href="/user" className=" flex gap-2 ">
+                <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      width="23"
-                      height="22"
+                      width="30"
+                      height="30"
                       viewBox="0 0 23 22"
                       fill="none"
                     >
@@ -469,9 +438,9 @@ export default function UserHeader() {
                         stroke-linejoin="round"
                       />
                     </svg>
-                    <span className="hover:text-red-500">Logout</span>
-                  </div>
-                </li>
+                  <span className="text-[#000000] hover:text-red-500">Logout</span>
+                </Link>
+              </li>
               </ul>
             </div>
           </div>

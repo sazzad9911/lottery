@@ -6,7 +6,7 @@ function page() {
     <div className="bg-white">
       <div className="bg-[#D9D9D9] mx-3 sm:mx-10 lg:mx-12 xl:mx-20 my-5 pt-10 pb-20 rounded-[10px]">      
       <div className="pb-8 pl-2 pr-2 sm:mx-8 md:mx-4 lg:mx-12 mb-10 w-auto overflow-x-auto">
-      <h1 className="text-black text-[20px] font-semibold mb-4">Ticket Sells</h1>
+      <h1 className="text-black text-[20px] font-semibold mb-4">Results</h1>
         <table className="table w-full">
           <thead>
             <tr className="text-left text-[14px] sm:text-[16px] text-[#000000] ">
@@ -44,3 +44,4 @@ function page() {
 }
 
 export default page;
+
