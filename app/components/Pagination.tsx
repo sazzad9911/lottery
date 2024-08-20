@@ -21,7 +21,7 @@ const Pagination: React.FC<PaginationProps> = ({
         
       >
         <svg
-          className="text-[#000000] text-[16px] mr-0 sm:mr-0 w-7 h-7 sm:w-8 sm:h-7 lg:w-10 lg:h-11"
+          className=" text-[#000000] text-[16px] mr-0 sm:mr-0 w-7 h-7 sm:w-8 sm:h-7 lg:w-10 lg:h-11"
           viewBox="0 0 45 42"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"

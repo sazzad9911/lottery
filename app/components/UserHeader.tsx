@@ -333,10 +333,10 @@ export default function UserHeader() {
                     setIsOpen(false);
                   }}
                   className={` flex items-center px-5 py-1 rounded-md ${
-                    pathname === "/user/withdraw-request" && "text-[#349407]"
+                    pathname === "/user/withdraws" && "text-[#349407]"
                   }`}
                 >
-                  <Link href="/user/withdraw-request" className=" flex gap-2 ">
+                  <Link href="/user/withdraws" className=" flex gap-2 ">
                     <svg
                       width="30"
                       height="30"
@@ -419,10 +419,10 @@ export default function UserHeader() {
 
             <li
                 className={` flex items-center px-5 py-1 rounded-md ${
-                   pathname === "/user" && "text-[#349407]"
+                   pathname === "/pages/login" && "text-[#349407]"
                 }`}
               >
-                <Link href="/user" className=" flex gap-2 ">
+                <Link href="/pages/login" className=" flex gap-2 ">
                 <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="30"

@@ -163,10 +163,10 @@ export default function SideBar() {
 
               <li
                 className={` flex items-center px-5 py-1 rounded-md  ${
-                   pathname === "/user" && "text-[#349407]"
+                   pathname === "/pages/login" && "text-[#349407]"
                 }`}
               >
-                <Link href="/user" className=" flex gap-2 ">
+                <Link href="/pages/login" className=" flex gap-2 ">
                 <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="30"
