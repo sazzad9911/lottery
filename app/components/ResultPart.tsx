@@ -10,7 +10,7 @@ function ResultPart() {
       <Resultcard></Resultcard>
       <Resultcard></Resultcard>
       <Resultcard></Resultcard>
-      <Resultcard></Resultcard>
+      
       
       <Pagination
           currentPage={page}
