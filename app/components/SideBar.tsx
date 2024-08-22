@@ -17,7 +17,7 @@ export default function SideBar() {
                 pathname === "/user" && "text-[#D94F72]"
               }`}
             >
-              <Link href="/user" className=" flex gap-2 ">
+              <Link href="/user" className=" flex gap-2">
               <svg
                       width="30"
                       height="30"
@@ -48,7 +48,7 @@ export default function SideBar() {
             
               <li
                 className={` flex items-center px-5 py-1 rounded-md hover:text-white ${
-                  pathname === "/user/sells" && "text-[#349407]"
+                  pathname === "/user/sells" && "text-[#D94F72]"
                 }`}
               >
                 <Link href="/user/sells" className=" flex gap-2 ">
@@ -70,10 +70,9 @@ export default function SideBar() {
             
 
            <li
-              className={` flex items-center px-5 py-1 rounded-md hover:text-white ${
-                // (pathname === "" && "text-[#349407]") ||
-                (pathname === "" && "text-[#349407]")
-              }`}
+                className={` flex items-center px-5 py-1 rounded-md hover:text-white ${
+                  pathname === "/user/results" && "text-[#D94F72]"
+               }`}
              >
               <Link href="/user/results" className=" flex gap-2 ">
               <svg
@@ -135,7 +134,7 @@ export default function SideBar() {
             {/* {userData?.isAdmin && userData.isAgent && ( */}
               <li
                 className={` flex items-center px-5 py-1 rounded-md hover:text-white ${
-                   pathname === "/user/withdraws" && "text-[#349407]"
+                   pathname === "/user/withdraws" && "text-[#D94F72]"
                 }`}
               >
                 <Link href="/user/withdraws" className=" flex gap-2 ">
@@ -163,7 +162,7 @@ export default function SideBar() {
 
               <li
                 className={` flex items-center px-5 py-1 rounded-md  ${
-                   pathname === "/pages/login" && "text-[#349407]"
+                   pathname === "/pages/login" && "text-[#D94F72]"
                 }`}
               >
                 <Link href="/pages/login" className=" flex gap-2 ">

@@ -12,6 +12,7 @@ const Pagination: React.FC<PaginationProps> = ({
   totalPages,
   onPageChange,
 }) => {
+  
   return (
     <div className="flex pt-3 lg:pt-5 gap-1 lg:gap-2 justify-end lg:mr-6"> 
       <button

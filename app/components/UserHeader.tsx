@@ -33,13 +33,13 @@ export default function UserHeader() {
           </Link>
         </div>
 
-        <div className="ml-5 md:hidden"></div>
+        {/* <div className="ml-5 md:hidden"></div> */}
 
         <div className=" hidden md:flex items-center">
           <div className="rounded-full flex items-center">
             <Link href="/user/user-profile">
               <div className="w-[40px] h-[40px]">
-                <svg
+                <svg                 
                   width="47"
                   height="47"
                   viewBox="0 0 47 47"
@@ -186,7 +186,7 @@ export default function UserHeader() {
 
           <div className="flex justify-center items-center">
             <div>
-              <p className="text-[#000000] text-[14px] mr-2">00</p>
+              <p className="text-[#000000] text-[14px] mr-2">200</p>
             </div>
           </div>
 
@@ -198,7 +198,7 @@ export default function UserHeader() {
                     setIsOpen(false);
                   }}
                   className={` flex items-center px-5 py-1 rounded-md ${
-                    pathname === "/user" && "text-[#349407]"
+                    pathname === "/user" && "text-[#D94F72]"
                   }`}
                 >
                   <Link href="/user" className=" flex gap-2 ">
@@ -226,7 +226,7 @@ export default function UserHeader() {
                         fill="#999999"
                       />
                     </svg>
-                    <span className="text-[#000000] hover:text-[#D94F72]">
+                    <span className="text-[#000000] hover:text-white">
                       Dashboard
                     </span>
                   </Link>
@@ -237,7 +237,7 @@ export default function UserHeader() {
                     setIsOpen(false);
                   }}
                   className={` flex items-center px-5 py-1 rounded-md ${
-                    pathname === "/user/sells" && "text-[#349407]"
+                    pathname === "/user/sells" && "text-[#D94F72]"
                   }`}
                 >
                   <Link href="/user/sells" className=" flex gap-2 ">
@@ -253,7 +253,7 @@ export default function UserHeader() {
                         fill="black"
                       />
                     </svg>
-                    <span className="text-[#000000] hover:text-red-500">
+                    <span className="text-[#000000] hover:text-white">
                       Sells
                     </span>
                   </Link>
@@ -264,8 +264,8 @@ export default function UserHeader() {
                     setIsOpen(false);
                   }}
                   className={` flex items-center px-5 py-1 rounded-md ${
-                    (pathname === "/user/results" && "text-[#349407]") ||
-                    (pathname === "/user/invest" && "text-[#349407]")
+                    (pathname === "/user/results" && "text-[#D94F72]") 
+                    // (pathname === "/user/invest" && "text-[#349407]")
                   }`}
                 >
                   <Link href="/user/results" className=" flex gap-2 ">
@@ -322,7 +322,7 @@ export default function UserHeader() {
                       </defs>
                     </svg>
 
-                    <span className="text-[#000000] hover:text-red-500">
+                    <span className="text-[#000000] hover:text-white">
                       Results
                     </span>
                   </Link>
@@ -333,10 +333,10 @@ export default function UserHeader() {
                     setIsOpen(false);
                   }}
                   className={` flex items-center px-5 py-1 rounded-md ${
-                    pathname === "/user/withdraws" && "text-[#349407]"
+                    pathname === "/user/withdraws" && "text-[#D94F72]"
                   }`}
                 >
-                  <Link href="/user/withdraws" className=" flex gap-2 ">
+                  <Link href="/user/withdraws" className=" flex gap-2 text-[#D94F72]">
                     <svg
                       width="30"
                       height="30"
@@ -355,7 +355,7 @@ export default function UserHeader() {
                         fill="#0F0F0F"
                       />
                     </svg>
-                    <span className="text-[#000000] hover:text-red-500">
+                    <span className="text-[#000000] hover:text-white">
                       Withdraws
                     </span>
                   </Link>
@@ -419,10 +419,10 @@ export default function UserHeader() {
 
             <li
                 className={` flex items-center px-5 py-1 rounded-md ${
-                   pathname === "/pages/login" && "text-[#349407]"
+                   pathname === "/pages/login" && "text-[#D94F72]"
                 }`}
               >
-                <Link href="/pages/login" className=" flex gap-2 ">
+                <Link href="/pages/login" className=" flex gap-2 text-[#000000]">
                 <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="30"
@@ -438,7 +438,7 @@ export default function UserHeader() {
                         stroke-linejoin="round"
                       />
                     </svg>
-                  <span className="text-[#000000] hover:text-red-500">Logout</span>
+                  <span className="text-[#000000] hover:text-white">Logout</span>
                 </Link>
               </li>
               </ul>
