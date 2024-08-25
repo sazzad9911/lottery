@@ -100,12 +100,12 @@ export default function Banner() {
               <p className="font-normal text-[14px] md:text-[16px] text-justify">
                 {language === "en"
                   ? "Dear Lottery is a compelling drama that revolves around the lives of individuals whose fates are intertwined by a massive lottery win. The story delves into the complexities of luck, greed, and human nature, exploring how sudden wealth can both transform and complicate relationships. As characters navigate their newfound fortunes, they face moral dilemmas, unexpected challenges, and the poignant realization that money cant buy happiness."
-                  : "প্রিয় লটারি হল একটি আকর্ষক নাটক যা সেই ব্যক্তিদের জীবনের চারপাশে আবর্তিত হয় যাদের ভাগ্য একটি বিশাল লটারি জয়ের সাথে জড়িত। গল্পটি ভাগ্য, লোভ এবং মানব প্রকৃতির জটিলতাগুলিকে আবিষ্কার করে, কীভাবে আকস্মিক সম্পদ সম্পর্ককে রূপান্তরিত এবং জটিল করে তুলতে পারে। অক্ষরগুলি যখন তাদের নতুন ভাগ্যের দিকে নেভিগেট করে, তারা নৈতিক দ্বিধা, অপ্রত্যাশিত চ্যালেঞ্জ এবং মর্মান্তিক উপলব্ধির মুখোমুখি হয় যে অর্থ সুখ কিনতে পারে না"}
+                  : "ডিয়ার লটারি হল একটি আকর্ষক নাটক যা সেই ব্যক্তিদের জীবনের চারপাশে আবর্তিত হয় যাদের ভাগ্য একটি বিশাল লটারি জয়ের সাথে জড়িত। গল্পটি ভাগ্য, লোভ এবং মানব প্রকৃতির জটিলতাগুলিকে আবিষ্কার করে, কীভাবে আকস্মিক সম্পদ সম্পর্ককে রূপান্তরিত এবং জটিল করে তুলতে পারে। অক্ষরগুলি যখন তাদের নতুন ভাগ্যের দিকে নেভিগেট করে, তারা নৈতিক দ্বিধা, অপ্রত্যাশিত চ্যালেঞ্জ এবং মর্মান্তিক উপলব্ধির মুখোমুখি হয় যে অর্থ সুখ কিনতে পারে না"}
               </p>
               <p className="font-normal text-[14px] md:text-[16px] text-[#F7FF01] text-justify">
                 {language === "en"
                   ? "Earn 5% commission on every ticket you resell! Join our program today and start making extra money by helping others find tickets to their favourite events!!!"
-                  : "আপনি পুনরায় বিক্রি করা প্রতিটি টিকিটে 5% কমিশন উপার্জন করুন! আজই আমাদের প্রোগ্রামে যোগ দিন এবং অন্যদের তাদের প্রিয় ইভেন্টের টিকিট খুঁজে পেতে সাহায্য করে অতিরিক্ত অর্থ উপার্জন শুরু করুন!!!"}
+                  : "আপনি পুনরায় বিক্রি করা প্রতিটি টিকিটে ৫% কমিশন উপার্জন করুন! আজই আমাদের প্রোগ্রামে যোগ দিন এবং অন্যদের তাদের প্রিয় ইভেন্টের টিকিট খুঁজে পেতে সাহায্য করে অতিরিক্ত অর্থ উপার্জন শুরু করুন!!!"}
               </p>
               <div className="flex gap-4 text-black">
                 {/* <Link href="/pages/take-ticket">
