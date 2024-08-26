@@ -143,7 +143,7 @@ function ComplainBox() {
               className="w-full outline-[#D94F72] p-3 bg-[#D9D9D9] rounded-md mb-4"
             >
               <option value="" disabled>
-                Select a point
+                {language === "en" ? "Select a point":"একটি নির্বাচন করুন"}               
               </option>
               {data?.map((d: string, i: number) => (
                 <option key={i} value={d}>

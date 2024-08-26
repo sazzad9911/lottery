@@ -8,7 +8,7 @@ const Introduction: React.FC = () => {
   return (
     <div className="container mx-auto px-2 md:px-8">
       <div className="text-black mt-6">
-        <h1 className="text-3xl font-normal mb-4">
+        <h1 className="text-3xl font-normal mb-4">          
           {language === "en" ? "Introduction" : "ভূমিকা"}
         </h1>
         <div className="space-y-4">
