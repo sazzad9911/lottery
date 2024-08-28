@@ -37,7 +37,7 @@ export default function UserHeader() {
 
         <div className=" hidden md:flex items-center">
           <div className="rounded-full flex items-center">
-            <Link href="/user/user-profile">
+            <Link href="/user">
               <div className="w-[40px] h-[40px]">
                 <svg                 
                   width="47"
@@ -75,7 +75,7 @@ export default function UserHeader() {
             </Link>
 
             <div className="ml-5">
-              <Link href="/user/user-profile">
+              <Link href="/user">
                 <div>
                   <p className="text-[#FFFFFF] text-[16px]">Najmul Islam</p>
                 </div>
@@ -149,9 +149,9 @@ export default function UserHeader() {
               onClick={() => {
                 setIsOpen(false);
               }}
-              className={`list-none ${pathname === "/user/user-profile"}`}
+              className={`list-none ${pathname === "/user"}`}
             >
-              <Link href="/user/user-profile">
+              <Link href="/user">
                 <svg
                   width="30"
                   height="30"
@@ -175,9 +175,9 @@ export default function UserHeader() {
             onClick={() => {
               setIsOpen(false);
             }}
-            className={`list-none ${pathname === "/user/user-profile"}`}
+            className={`list-none ${pathname === "/user"}`}
           >
-            <Link href="/user/user-profile">
+            <Link href="/user">
               <p className="text-[#000000] hover:text-red-500 text-[16px] text-center">
                 Najmul Islam
               </p>
