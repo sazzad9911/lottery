@@ -66,7 +66,7 @@ export default function Header() {
               </div>
           </Link>
           <div className="lg:flex justify-end items-center gap-2 md:gap-4 lg:gap-10  hidden">
-            <Link
+            <Link 
               href="/"
               className={`text-[12px] font-normal md:font-medium md:text-[16px] ${
                 route == "/"
@@ -74,7 +74,7 @@ export default function Header() {
                   : "text-[#FFFFFF] hover:text-[#F9DC00] transition-colors duration-300"
               }`}
             >
-              {language === "en" ? "HOME" : "হোম"}
+             {language === "en" ? "HOME" : "হোম"}
             </Link>
             <Link
               href="/pages/live-draw"
