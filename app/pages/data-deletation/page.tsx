@@ -78,7 +78,7 @@ const DataDeletionPolicy = () => {
         <p className="mb-4">
           {language === "en"
             ? "Once your request is verified and approved, we will delete your personal data from our active systems and databases. This process will be completed within 30 days of receiving your verified request."
-            : "একবার আপনার অনুরোধ যাচাই এবং অনুমোদিত হলে, আমরা আমাদের সক্রিয় সিস্টেম এবং ডাটাবেস থেকে আপনার ব্যক্তিগত ডেটা মুছে দেব। এই প্রক্রিয়াটি আপনার যাচাইকৃত অনুরোধ পাওয়ার 30 দিনের মধ্যে সম্পন্ন হবে।"}
+            : "একবার আপনার অনুরোধ যাচাই এবং অনুমোদিত হলে, আমরা আমাদের সক্রিয় সিস্টেম এবং ডাটাবেস থেকে আপনার ব্যক্তিগত ডেটা মুছে দেব। এই প্রক্রিয়াটি আপনার যাচাইকৃত অনুরোধ পাওয়ার ৩০ দিনের মধ্যে সম্পন্ন হবে।"}
         </p>
         <h3 className="text-xl font-medium mb-1">
           {language === "en" ? "4. Notification:" : "৪. বিজ্ঞপ্তি:"}
