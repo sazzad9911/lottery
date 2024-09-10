@@ -37,6 +37,7 @@ export default function ForgotPass() {
               className="w-full px-3 py-2 bg-[#D9D9D9] rounded-md text-black outline-[#D94F72]"
               placeholder={language==="en"?"Write your number":"আপনার নম্বর লিখুন"}
               value={number}
+              maxLength={11}
               onChange={(e) => setNumber(e.target.value)}
               required
             />

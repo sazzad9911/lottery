@@ -70,6 +70,7 @@ export default function Login() {
                 language === "en" ? "Write your number" : "আপনার নম্বর লিখুন"
               }
               value={mobileNumber}
+              maxLength={11}
               onChange={(e) => setMobileNumber(e.target.value)}
               required
             />
@@ -85,6 +86,7 @@ export default function Login() {
                 language === "en" ? "Give password" : "পাসওয়ার্ড দিন"
               }
               value={password}
+              maxLength={10}
               onChange={(e) => setPassword(e.target.value)}
               required
             />
