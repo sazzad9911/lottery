@@ -20,7 +20,7 @@ const Pagination: React.FC<PaginationProps> = ({
         disabled={currentPage === 1}
       >
         <svg
-          className="bg-[#D9D9D9] rounded border border-black  text-[#000000] text-[16px] mr-0 sm:mr-0 w-7 h-7 sm:w-8 sm:h-7 lg:w-9 lg:h-9"
+          className="bg-[#D9D9D9] rounded border border-black  text-[#000000] text-[16px] mr-0 sm:mr-0 w-6 h-6 sm:w-8 sm:h-7 lg:w-9 lg:h-9"
           viewBox="0 0 45 42"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -40,8 +40,8 @@ const Pagination: React.FC<PaginationProps> = ({
         <div  
           className={`${
             currentPage === page
-              ? "bg-[#A6FFB4] border border-black text-[#000000] text-[14px] sm:text-[16px] rounded flex justify-center items-center w-6 h-6 sm:w-8 sm:h-7 lg:w-10 lg:h-9 mt-0.5 "
-              : "w-6 h-6 sm:w-8 sm:h-7 lg:w-10 lg:h-9 mt-0.5 text-[14px] sm:text-[16px] text-[#000000] rounded border border-black flex justify-center items-center"
+              ? "bg-[#A6FFB4] border border-black text-[#000000] text-[14px] sm:text-[16px] rounded flex justify-center items-center w-6 h-6 sm:w-8 sm:h-7 lg:w-10 lg:h-9 mt-0.6"
+              : "w-6 h-6 sm:w-8 sm:h-7 lg:w-10 lg:h-9 mt-0.6 text-[14px] sm:text-[16px] text-[#000000] rounded border border-black flex justify-center items-center"
           } cursor-pointer`}
           key={page} 
           onClick={() => onPageChange(page)}
@@ -55,7 +55,7 @@ const Pagination: React.FC<PaginationProps> = ({
         disabled={currentPage === totalPages}
       >
         <svg
-          className="bg-[#D9D9D9] rounded border border-black text-[#000000] text-[16px] ml-0 sm:ml-0 w-7 h-7 sm:w-8 sm:h-7 lg:w-9 lg:h-9"
+          className="bg-[#D9D9D9] rounded border border-black text-[#000000] text-[16px] ml-0 sm:ml-0 w-6 h-6 sm:w-8 sm:h-7 lg:w-9 lg:h-9"
           viewBox="0 0 45 42"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
