@@ -1,5 +1,4 @@
 "use client";
-import { NextPage } from "next";
 import ResultPart from "@/app/components/ResultPart";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { useSelector } from "react-redux";
@@ -8,7 +7,7 @@ import PDFViewer from "@/app/components/PdfViewer";
 
 const theme = createTheme();
 
-const PaginationPage: NextPage = () => {
+const PaginationPage = () => {
   const language = useSelector((state: RootState) => state.language.language);
 
   return (

@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import UserPagination from "@/app/components/UserPagination";
 
-function page() {
+function Page() {
   const [page, setPage] = useState<number>(1);
   return (
     <div className="bg-white">
@@ -50,5 +50,5 @@ function page() {
   );
 }
 
-export default page;
+export default Page;
 
