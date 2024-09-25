@@ -48,7 +48,7 @@ const Footer: React.FC = () => {
             {language === "en" ? "Follow Us" : "অনুসরণ করুন"}
               </p>
             <FooterSocialSVG></FooterSocialSVG>
-            <div className=" flex justify-center gap-2 md:gap-4 xl:gap-10 my-4 md:my-10 flex-wrap">
+            <div className=" flex justify-center gap-2 md:gap-4 xl:gap-10 my-2 md:my-4 pt-8 flex-wrap">
               <Link href="/pages/rules-act" className="text-[#CA5CB2] underline mx-2 text-[14px] md:text-[20px] hover:scale-105 duration-300">
               {language === "en" ? "Lottery Rules & Act" : "লটারির নিয়ম ও আইন"}
               </Link>
@@ -65,7 +65,7 @@ const Footer: React.FC = () => {
               {language === "en" ? "Data Deletion Policy" : "ডেটা মুছে ফেলার নীতি"}
               </Link>
             </div>
-            <p className="text-gray-600 py-10 text-[14px] md:text-[20px] ">
+            <p className="text-gray-600 py-6 text-[14px] md:text-[20px] ">
               &copy; {new Date().getFullYear()} - {language === "en" ? "All Rights Reserved By DEAR LOTTERY" : "ডিয়ার লটারির সর্বস্বত্ব সংরক্ষিত"}
             </p>
           </div>
