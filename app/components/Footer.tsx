@@ -16,8 +16,8 @@ const Footer: React.FC = () => {
         <footer className="border-t-4 border-t-[#D94F72] ">
           <div className="container mx-auto text-center">
             <p className="text-center font-semibold mt-8">
-            {language === "en" ? "Powered By" : "সৌজন্যে"}
-              </p>
+              {language === "en" ? "Powered By" : "সৌজন্যে"}
+            </p>
             <div className="flex justify-center items-center">
               <div className="relative h-10 lg:h-20 w-20 lg:w-40">
                 <Image
@@ -45,28 +45,50 @@ const Footer: React.FC = () => {
               </div>
             </div>
             <p className="text-center  font-semibold my-4 md:my-8">
-            {language === "en" ? "Follow Us" : "অনুসরণ করুন"}
-              </p>
+              {language === "en" ? "Follow Us" : "অনুসরণ করুন"}
+            </p>
             <FooterSocialSVG></FooterSocialSVG>
             <div className=" flex justify-center gap-2 md:gap-4 xl:gap-10 my-2 md:my-4 pt-8 flex-wrap">
-              <Link href="/pages/rules-act" className="text-[#CA5CB2] underline mx-2 text-[14px] md:text-[20px] hover:scale-105 duration-300">
-              {language === "en" ? "Lottery Rules & Act" : "লটারির নিয়ম ও আইন"}
+              <Link
+                href="/pages/rules-act"
+                className="text-[#CA5CB2] underline mx-2 text-[14px] md:text-[20px] hover:scale-105 duration-300"
+              >
+                {language === "en"
+                  ? "Lottery Rules & Act"
+                  : "লটারির নিয়ম ও আইন"}
               </Link>
-              <Link href="/pages/privacy-policy" className="text-[#CA5CB2] underline mx-2 text-[14px] md:text-[20px] hover:scale-105 duration-300">
-              {language === "en" ? "Privacy Policy" : "গোপনীয়তা নীতি"}
+              <Link
+                href="/pages/privacy-policy"
+                className="text-[#CA5CB2] underline mx-2 text-[14px] md:text-[20px] hover:scale-105 duration-300"
+              >
+                {language === "en" ? "Privacy Policy" : "গোপনীয়তা নীতি"}
               </Link>
-              <Link href="/pages/return-policy" className="text-[#CA5CB2] underline mx-2 text-[14px] md:text-[20px] hover:scale-105 duration-300">
-              {language === "en" ? "Return Policy" : "প্রত্যাবর্তন নীতি"}
+              <Link
+                href="/pages/return-policy"
+                className="text-[#CA5CB2] underline mx-2 text-[14px] md:text-[20px] hover:scale-105 duration-300"
+              >
+                {language === "en" ? "Return Policy" : "প্রত্যাবর্তন নীতি"}
               </Link>
-              <Link href="/pages/site-map" className="text-[#CA5CB2] underline mx-2 text-[14px] md:text-[20px] hover:scale-105 duration-300">
-              {language === "en" ? "Site Map" : "সাইট মানচিত্র"}
+              <Link
+                href="/pages/site-map"
+                className="text-[#CA5CB2] underline mx-2 text-[14px] md:text-[20px] hover:scale-105 duration-300"
+              >
+                {language === "en" ? "Site Map" : "সাইট মানচিত্র"}
               </Link>
-              <Link href="/pages/data-deletation" className="text-[#CA5CB2] underline mx-2 text-[14px] md:text-[20px] hover:scale-105 duration-300">
-              {language === "en" ? "Data Deletion Policy" : "ডেটা মুছে ফেলার নীতি"}
+              <Link
+                href="/pages/data-deletation"
+                className="text-[#CA5CB2] underline mx-2 text-[14px] md:text-[20px] hover:scale-105 duration-300"
+              >
+                {language === "en"
+                  ? "Data Deletion Policy"
+                  : "ডেটা মুছে ফেলার নীতি"}
               </Link>
             </div>
             <p className="text-gray-600 py-6 text-[14px] md:text-[20px] ">
-              &copy; {new Date().getFullYear()} - {language === "en" ? "All Rights Reserved By DEAR LOTTERY" : "ডিয়ার লটারির সর্বস্বত্ব সংরক্ষিত"}
+              &copy; {new Date().getFullYear()} -{" "}
+              {language === "en"
+                ? "All Rights Reserved By DEAR LOTTERY"
+                : "ডিয়ার লটারির সর্বস্বত্ব সংরক্ষিত"}
             </p>
           </div>
         </footer>
